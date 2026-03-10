@@ -97,7 +97,7 @@ Update these placeholders before going live:
 
 - Main site links: `https://alexzander73.github.io` (nav + footer across pages)
 - Social links: `https://github.com/AlexZander73`
-- Email link: `mailto:you@example.com`
+- Email link: `mailto:index-hearty6c@icloud.com`
 - Site name text (`Builder Journal`) if you want a different brand name
 
 ## Notes
