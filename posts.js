@@ -1,57 +1,93 @@
 window.BLOG_POSTS = [
   {
-    slug: "quiet-launch-builder-journal",
-    title: "Quiet Launch: Publishing the Builder Journal",
-    date: "2026-03-08",
-    excerpt: "I shipped the first public version of this blog with one rule: capture momentum in public without waiting for perfect polish.",
-    tags: ["Build Logs", "Launches", "Notes"],
-    readingTime: "6 min read",
-    path: "posts/quiet-launch-builder-journal.html",
+    slug: "carpentry-companion-release-readiness-checkpoint",
+    title: "Release Readiness Checkpoint: Where Carpentry Companion Stands Today",
+    date: "2026-03-10",
+    excerpt: "As of 2026-03-10, the app is still pre-launch, but the release spine is finally real: privacy policy in place, tests green, native build prep passing, and clear blockers tracked.",
+    tags: ["Launches", "Build Logs", "Apps"],
+    readingTime: "5 min read",
+    path: "posts/carpentry-companion-release-readiness-checkpoint.html",
     isFeatured: true
   },
   {
-    slug: "ai-copilot-loop-notes",
-    title: "Designing an AI Co-Pilot Loop That Actually Saves Time",
+    slug: "carpentry-companion-native-first-pivot-note",
+    title: "Backlog Entry: Why I Removed Pages and Went Native-First",
+    date: "2026-03-10",
+    excerpt: "I removed the repo-level GitHub Pages deploy workflow and committed to native-first release flow. One channel, less split focus, faster execution.",
+    tags: ["Systems", "Apps", "Notes"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-native-first-pivot-note.html"
+  },
+  {
+    slug: "carpentry-companion-design-clarity-pass",
+    title: "Backlog Entry: Making the UI Feel Alive, Not Loud",
+    date: "2026-03-09",
+    excerpt: "Feedback said the app was useful but flat. I rolled out a restrained accent system and renamed Work Packs to Plans for cleaner language.",
+    tags: ["Design", "Apps", "Notes"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-design-clarity-pass.html"
+  },
+  {
+    slug: "carpentry-companion-menu-break-fix",
+    title: "Backlog Entry: The Day the Menu Broke on iPhone",
+    date: "2026-03-09",
+    excerpt: "The mobile menu became transparent, overlapped content, and would not scroll. I fixed it across four commits and relearned that nav bugs kill trust fast.",
+    tags: ["Build Logs", "Design", "Apps"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-menu-break-fix.html"
+  },
+  {
+    slug: "carpentry-companion-safe-area-week",
+    title: "Backlog Entry: Safe-Area Week and the Black-Screen Scare",
     date: "2026-03-04",
-    excerpt: "After several false starts, I found a practical prompt workflow that cuts context-switching and makes execution noticeably faster.",
-    tags: ["AI", "Tools", "Experiments"],
-    readingTime: "7 min read",
-    path: "posts/ai-copilot-loop-notes.html"
-  },
-  {
-    slug: "tiny-game-loop-48-hours",
-    title: "From Sketch to Playtest: A Tiny Game Loop in 48 Hours",
-    date: "2026-02-26",
-    excerpt: "I tested a small game concept in a weekend sprint and learned which design decisions create fun immediately.",
-    tags: ["Games", "Experiments", "Design"],
-    readingTime: "8 min read",
-    path: "posts/tiny-game-loop-48-hours.html"
-  },
-  {
-    slug: "shipping-utility-app-sprints",
-    title: "Shipping a Utility App in Small Daily Sprints",
-    date: "2026-02-17",
-    excerpt: "A disciplined one-hour sprint structure helped me move an app from rough concept to launch-ready prototype in under three weeks.",
-    tags: ["Apps", "Build Logs", "Systems"],
-    readingTime: "6 min read",
-    path: "posts/shipping-utility-app-sprints.html"
-  },
-  {
-    slug: "weekly-builder-operating-system-v1",
-    title: "My Weekly Builder Operating System (v1)",
-    date: "2026-02-09",
-    excerpt: "This simple weekly framework keeps strategy, execution, and recovery aligned so progress compounds instead of stalling.",
-    tags: ["Systems", "Notes", "Tools"],
+    excerpt: "Notch clipping and startup instability hit hard on iPhone. Fixing safe areas and storyboard wiring became release-critical work, not polish.",
+    tags: ["Apps", "Build Logs", "Notes"],
     readingTime: "5 min read",
-    path: "posts/weekly-builder-operating-system-v1.html"
+    path: "posts/carpentry-companion-safe-area-week.html"
   },
   {
-    slug: "micro-product-launch-checklist",
-    title: "Launch Checklist I Reuse for Micro Products",
-    date: "2026-01-29",
-    excerpt: "A repeatable launch checklist reduces forgotten details and keeps release days calm, fast, and professional.",
-    tags: ["Launches", "Apps", "Design"],
-    readingTime: "6 min read",
-    path: "posts/micro-product-launch-checklist.html"
+    slug: "carpentry-companion-capacitor-native-step",
+    title: "Backlog Entry: Choosing Native Without Rewriting",
+    date: "2026-02-28",
+    excerpt: "I added Capacitor iOS/Android projects and kept one React codebase. It was the cleanest path to real device usage without a full restart.",
+    tags: ["Apps", "Systems", "Experiments"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-capacitor-native-step.html"
+  },
+  {
+    slug: "carpentry-companion-plans-packaging",
+    title: "Backlog Entry: Packaging the App Into Plans",
+    date: "2026-02-27",
+    excerpt: "I introduced packaged workflows and free-tier limits so the app had structure, not just features. This was a product-shape day.",
+    tags: ["Build Logs", "Tools", "Systems"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-plans-packaging.html"
+  },
+  {
+    slug: "carpentry-companion-subscription-scaffold",
+    title: "Backlog Entry: Subscription Gating Entered the App",
+    date: "2026-02-25",
+    excerpt: "2026-02-25 was the day this stopped being just a build experiment. App Store scaffolding, subscription gates, and wizard routes moved it into product territory.",
+    tags: ["Apps", "Launches", "Systems"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-subscription-scaffold.html"
+  },
+  {
+    slug: "carpentry-companion-legal-safe-rule",
+    title: "Backlog Entry: The Legal-Safe Rule That Shaped Everything",
+    date: "2026-02-21",
+    excerpt: "I made a hard rule early: no republishing standards text. Only identifiers, links, and my own summaries. That constraint protected the product and clarified the voice.",
+    tags: ["Notes", "Systems", "Apps"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-legal-safe-rule.html"
+  },
+  {
+    slug: "carpentry-companion-day-zero-job-mode",
+    title: "Backlog Entry: Day Zero and the First Job Mode Build",
+    date: "2026-02-20",
+    excerpt: "On day one I stopped treating this like a calculator toy and built Job Mode, audit trail, and exports so the app could survive real site work.",
+    tags: ["Apps", "Build Logs", "Tools"],
+    readingTime: "4 min read",
+    path: "posts/carpentry-companion-day-zero-job-mode.html"
   }
 ];

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backlog Entry: The Day the Menu Broke on iPhone | Builder Journal</title>
+  <meta name="description" content="The mobile menu became transparent, overlapped content, and would not scroll. I fixed it across four commits and relearned that nav bugs kill trust fast.">
+  <meta property="og:title" content="Backlog Entry: The Day the Menu Broke on iPhone">
+  <meta property="og:description" content="The mobile menu became transparent, overlapped content, and would not scroll. I fixed it across four commits and relearned that nav bugs kill trust fast.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/carpentry-companion-menu-break-fix.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Build Logs · Design · Backlog Entry</p>
+        <h1>Backlog Entry: The Day the Menu Broke on iPhone</h1>
+        <p class="post-lead">Backlog entry for 2026-03-09. A major iPhone menu regression landed at the worst time. It looked small in code, but it broke core navigation on real devices.</p>
+        <p class="post-meta"><span>March 9, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Build Logs</span>
+          <span class="tag">Design</span>
+          <span class="tag">Apps</span>
+        </div>
+
+        <h2>How it failed</h2>
+        <p>On iPhone, the burger menu became transparent, stacked over live content, and sometimes locked scrolling. Users could not trust where they were in the app. That is a serious failure for a tool meant for quick decisions.</p>
+        <p>I moved menu placement out of risky stacking contexts, fixed body scroll locking, and adjusted sheet sizing and layering rules. It took multiple commits because each fix uncovered another edge case.</p>
+
+        <h2>How it felt</h2>
+        <p>I felt defensive at first, then focused. Seeing a broken menu screenshot from real use cuts through ego quickly. It reminded me to test interaction layers on device before calling UI work done.</p>
+        <p>This was also a morale test. Repetitive bug-fix loops are tiring, but finishing them creates real confidence.</p>
+
+        <h2>Lesson and next move</h2>
+        <p>Lesson: if navigation is unstable, everything feels unstable.</p>
+        <p>Next move was to pair this nav stability pass with a visual system cleanup, so the app felt coherent after the technical fixes.</p>
+
+        <blockquote>
+          Next move: keep the UX calm and consistent after recovery work.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./carpentry-companion-safe-area-week.html"><- Previous Entry</a>
+          <a class="text-link" href="./carpentry-companion-design-clarity-pass.html">Next Entry -></a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>Backlog timeline entry from the Carpentry Companion build cycle.</p>
+        <ul>
+          <li>Commit anchor: d62a7b7, 7499224, 650f6a4, 466b217</li>
+          <li>Emotional moment: real embarrassment after seeing user screenshot feedback</li>
+          <li>Concrete win: menu layering, placement, and scroll behavior restored</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Links To Customize</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:you@example.com">Email (change address)</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>
