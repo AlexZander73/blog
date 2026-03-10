@@ -95,7 +95,7 @@ Because links are relative, this setup works on standard GitHub Pages project UR
 
 Update these placeholders before going live:
 
-- Main site links: `https://your-main-site.example.com` (nav + footer across pages)
+- Main site links: `https://alexzander73.github.io` (nav + footer across pages)
 - Social links: `https://github.com/AlexZander73`
 - Email link: `mailto:you@example.com`
 - Site name text (`Builder Journal`) if you want a different brand name
