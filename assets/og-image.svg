@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Builder Journal Open Graph image">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4f7fb"/>
+      <stop offset="100%" stop-color="#e6eef8"/>
+    </linearGradient>
+    <linearGradient id="shape" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#66a9ba"/>
+      <stop offset="100%" stop-color="#0f738b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="100" r="180" fill="#dcebf6"/>
+  <circle cx="1090" cy="560" r="220" fill="#dcebf6"/>
+
+  <rect x="120" y="130" width="960" height="370" rx="36" fill="#ffffff" stroke="#d1deea" stroke-width="4"/>
+  <rect x="160" y="172" width="72" height="72" rx="18" fill="url(#shape)"/>
+  <path d="M196 186L212 208L196 230L180 208Z" fill="#ffffff"/>
+
+  <text x="260" y="218" fill="#1b2b3d" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="42" font-weight="700">
+    Builder Journal
+  </text>
+  <text x="160" y="292" fill="#46607a" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="28">
+    Projects, experiments, and launch notes from a solo builder.
+  </text>
+  <text x="160" y="336" fill="#46607a" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="28">
+    Thoughtful process. Real momentum. Long-term vision.
+  </text>
+</svg>

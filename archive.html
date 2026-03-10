@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archive | Builder Journal</title>
+  <meta name="description" content="Browse every post in Builder Journal. Filter by tags, search by keyword, and sort by newest first.">
+  <meta property="og:title" content="Archive | Builder Journal">
+  <meta property="og:description" content="Searchable archive of build logs, experiments, apps, AI projects, launches, and notes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/archive.html">
+  <meta property="og:image" content="./assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./posts.js"></script>
+  <script defer src="./script.js"></script>
+</head>
+<body data-page="archive">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./archive.html" aria-current="page">Archive</a>
+        <a href="./about.html">About</a>
+        <a class="main-site-link" href="https://your-main-site.example.com">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container page-intro enter" style="--delay: 60ms;">
+        <p class="eyebrow">Archive</p>
+        <h1>Every experiment, launch, and reflection in one timeline.</h1>
+        <p>
+          Use search and tags to quickly find what matters. Posts are sorted by newest first by default so recent momentum
+          is always easiest to see.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="archive-controls card enter" style="--delay: 110ms;">
+          <label class="field">
+            <span>Search posts</span>
+            <input id="archive-search" type="search" placeholder="Search title, excerpt, or tag">
+          </label>
+          <label class="field">
+            <span>Sort</span>
+            <select id="archive-sort">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="title">Title (A-Z)</option>
+            </select>
+          </label>
+        </div>
+        <div id="archive-tags" class="filter-row" aria-label="Tag filters"></div>
+        <p id="archive-count" class="archive-summary" aria-live="polite"></p>
+        <div id="archive-posts" class="post-grid archive-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="./index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A focused archive of building in public, designed for clarity and long-term tracking.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="./index.html">Home</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Links To Customize</h3>
+        <a href="https://your-main-site.example.com">Main Website (change URL)</a>
+        <a href="https://github.com/AlexZander73">GitHub (change URL)</a>
+        <a href="mailto:you@example.com">Email (change address)</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>
