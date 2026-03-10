@@ -11,7 +11,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-native-first-pivot-note",
-    title: "Backlog Entry: Why I Removed Pages and Went Native-First",
+    title: "Carpentry Companion: Why I Removed Pages and Went Native-First",
     date: "2026-03-10",
     excerpt: "I removed the repo-level GitHub Pages deploy workflow and committed to native-first release flow. One channel, less split focus, faster execution.",
     tags: ["Systems", "Apps", "Notes"],
@@ -20,7 +20,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-design-clarity-pass",
-    title: "Backlog Entry: Making the UI Feel Alive, Not Loud",
+    title: "Carpentry Companion: Making the UI Feel Alive, Not Loud",
     date: "2026-03-09",
     excerpt: "Feedback said the app was useful but flat. I rolled out a restrained accent system and renamed Work Packs to Plans for cleaner language.",
     tags: ["Design", "Apps", "Notes"],
@@ -29,7 +29,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-menu-break-fix",
-    title: "Backlog Entry: The Day the Menu Broke on iPhone",
+    title: "Carpentry Companion: The Day the Menu Broke on iPhone",
     date: "2026-03-09",
     excerpt: "The mobile menu became transparent, overlapped content, and would not scroll. I fixed it across four commits and relearned that nav bugs kill trust fast.",
     tags: ["Build Logs", "Design", "Apps"],
@@ -38,7 +38,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-safe-area-week",
-    title: "Backlog Entry: Safe-Area Week and the Black-Screen Scare",
+    title: "Carpentry Companion: Safe-Area Week and the Black-Screen Scare",
     date: "2026-03-04",
     excerpt: "Notch clipping and startup instability hit hard on iPhone. Fixing safe areas and storyboard wiring became release-critical work, not polish.",
     tags: ["Apps", "Build Logs", "Notes"],
@@ -47,7 +47,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-capacitor-native-step",
-    title: "Backlog Entry: Choosing Native Without Rewriting",
+    title: "Carpentry Companion: Choosing Native Without Rewriting",
     date: "2026-02-28",
     excerpt: "I added Capacitor iOS/Android projects and kept one React codebase. It was the cleanest path to real device usage without a full restart.",
     tags: ["Apps", "Systems", "Experiments"],
@@ -56,7 +56,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-plans-packaging",
-    title: "Backlog Entry: Packaging the App Into Plans",
+    title: "Carpentry Companion: Packaging the App Into Plans",
     date: "2026-02-27",
     excerpt: "I introduced packaged workflows and free-tier limits so the app had structure, not just features. This was a product-shape day.",
     tags: ["Build Logs", "Tools", "Systems"],
@@ -65,7 +65,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-subscription-scaffold",
-    title: "Backlog Entry: Subscription Gating Entered the App",
+    title: "Carpentry Companion: Subscription Gating Entered the App",
     date: "2026-02-25",
     excerpt: "2026-02-25 was the day this stopped being just a build experiment. App Store scaffolding, subscription gates, and wizard routes moved it into product territory.",
     tags: ["Apps", "Launches", "Systems"],
@@ -74,7 +74,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-legal-safe-rule",
-    title: "Backlog Entry: The Legal-Safe Rule That Shaped Everything",
+    title: "Carpentry Companion: The Legal-Safe Rule That Shaped Everything",
     date: "2026-02-21",
     excerpt: "I made a hard rule early: no republishing standards text. Only identifiers, links, and my own summaries. That constraint protected the product and clarified the voice.",
     tags: ["Notes", "Systems", "Apps"],
@@ -83,7 +83,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "carpentry-companion-day-zero-job-mode",
-    title: "Backlog Entry: Day Zero and the First Job Mode Build",
+    title: "Carpentry Companion: Day Zero and the First Job Mode Build",
     date: "2026-02-20",
     excerpt: "On day one I stopped treating this like a calculator toy and built Job Mode, audit trail, and exports so the app could survive real site work.",
     tags: ["Apps", "Build Logs", "Tools"],
