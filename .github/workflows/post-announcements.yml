@@ -1,0 +1,64 @@
+name: Post Announcements
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - posts.js
+      - posts/**
+      - newsletter/public-subscribers.json
+      - scripts/load-posts.mjs
+      - scripts/send_post_announcements.py
+      - .github/workflows/post-announcements.yml
+  schedule:
+    - cron: '15 * * * *'
+
+jobs:
+  announce:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      ANNOUNCE_SITE_NAME: Builder Journal
+      ANNOUNCE_BASE_URL: https://alexzander73.github.io/blog/
+      ANNOUNCE_TZ: Australia/Brisbane
+      SMTP_HOST: smtp.mail.me.com
+      SMTP_PORT: '587'
+      SMTP_USERNAME: index-hearty6c@icloud.com
+      EMAIL_FROM: Builder Journal <index-hearty6c@icloud.com>
+      EMAIL_REPLY_TO: index-hearty6c@icloud.com
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      EMAIL_SUBSCRIBERS: ${{ secrets.EMAIL_SUBSCRIBERS }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Send post announcement email
+        run: python3 scripts/send_post_announcements.py
+
+      - name: Commit announcement state
+        run: |
+          if git diff --quiet -- newsletter/announced-posts.json; then
+            echo "No newsletter state changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add newsletter/announced-posts.json
+          git commit -m "Update newsletter announcement state"
+          git push

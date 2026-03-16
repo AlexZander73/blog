@@ -12,6 +12,14 @@ Static, polished blog foundation for documenting projects, experiments, launches
 ├── styles.css
 ├── script.js
 ├── posts.js
+├── .github/workflows/
+│   └── post-announcements.yml
+├── scripts/
+│   ├── load-posts.mjs
+│   └── send_post_announcements.py
+├── newsletter/
+│   ├── public-subscribers.json
+│   └── announced-posts.json
 ├── assets/
 │   ├── favicon.svg
 │   └── og-image.svg
@@ -63,6 +71,66 @@ Posts with a future `date` stay hidden from the homepage, archive, and tag previ
 
 - Scheduled post pages are also blocked client-side if opened early.
 - This is a front-end scheduling layer only. If the repository is public, the raw HTML still exists in git history and the repo contents before the date. For a true embargo, keep unpublished posts off the public branch until release day.
+
+## Automatic email announcements
+
+The repo now includes a GitHub Actions workflow that can email newly published posts automatically.
+
+How it works:
+
+- `.github/workflows/post-announcements.yml` runs on:
+  - pushes that change posts or the newsletter scripts
+  - manual `workflow_dispatch`
+  - an hourly schedule
+- `scripts/send_post_announcements.py` reads `posts.js`, checks which posts are published in the `Australia/Brisbane` timezone, and emails only slugs that have not already been announced.
+- `newsletter/announced-posts.json` is the send-state file. The workflow commits updates to this file after a successful send so scheduled posts only go out once.
+- `newsletter/public-subscribers.json` is a committed list for public inboxes only.
+
+Important:
+
+- The current live archive was bootstrapped into `newsletter/announced-posts.json` on setup. That means the first workflow run will not resend older published posts.
+- Future publish dates in `posts.js` are respected. A post is only eligible for email once its publish date has arrived in Brisbane time.
+
+Current public subscriber:
+
+- `index-hearty6c@icloud.com`
+
+### Activate sending with iCloud SMTP
+
+The workflow is already configured around your support inbox:
+
+- SMTP host: `smtp.mail.me.com`
+- SMTP port: `587`
+- SMTP username: `index-hearty6c@icloud.com`
+- From: `Builder Journal <index-hearty6c@icloud.com>`
+- Reply-To: `index-hearty6c@icloud.com`
+
+To make sending live, add this repository secret in GitHub:
+
+- `SMTP_PASSWORD`
+  - value: an iCloud app-specific password for `index-hearty6c@icloud.com`
+
+Optional secret:
+
+- `EMAIL_SUBSCRIBERS`
+  - newline-, comma-, or semicolon-separated private recipients
+  - use this for real subscriber addresses you do not want stored in the public repo
+
+### Local commands
+
+Preview the next email without sending:
+
+```bash
+python3 scripts/send_post_announcements.py --dry-run
+```
+
+Re-bootstrap current published posts as already announced:
+
+```bash
+python3 scripts/send_post_announcements.py --bootstrap-published
+```
+
+Use `newsletter/private-subscribers.json` for local-only recipients if needed. That file is gitignored.
 
 ## Archive behavior
 

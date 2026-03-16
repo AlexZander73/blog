@@ -1,0 +1,162 @@
+{
+  "announcedPosts": {
+    "aistoryteller-adding-world-state-without-losing-the-plot": {
+      "date": "2026-02-17",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: Adding World State Without Losing the Plot"
+    },
+    "aistoryteller-optimizing-for-a-small-local-machine-changed-the-product": {
+      "date": "2026-02-28",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: Optimizing for a Small Local Machine Changed the Product"
+    },
+    "aistoryteller-repairing-npc-state-instead-of-faking-it": {
+      "date": "2026-02-19",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: Repairing NPC State Instead of Faking It"
+    },
+    "aistoryteller-starting-with-a-local-story-shell": {
+      "date": "2026-02-06",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: Starting With a Local Story Shell"
+    },
+    "aistoryteller-structured-generators-were-my-answer-to-fragile-extraction": {
+      "date": "2026-02-28",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: Structured Generators Were My Answer to Fragile Extraction"
+    },
+    "aistoryteller-user-history-had-to-become-a-server-problem": {
+      "date": "2026-02-20",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: User History Had to Become a Server Problem"
+    },
+    "aistoryteller-what-a-wip-commit-cost-me": {
+      "date": "2026-02-18",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: What a WIP Commit Cost Me"
+    },
+    "aistoryteller-when-one-writer-became-a-stack": {
+      "date": "2026-02-14",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "AIStoryTeller: When One Writer Became a Stack"
+    },
+    "carpentry-companion-capacitor-native-step": {
+      "date": "2026-02-28",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Choosing Native Without Rewriting"
+    },
+    "carpentry-companion-day-zero-job-mode": {
+      "date": "2026-02-20",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Day Zero and the First Job Mode Build"
+    },
+    "carpentry-companion-design-clarity-pass": {
+      "date": "2026-03-09",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Making the UI Feel Alive, Not Loud"
+    },
+    "carpentry-companion-legal-safe-rule": {
+      "date": "2026-02-21",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: The Legal-Safe Rule That Shaped Everything"
+    },
+    "carpentry-companion-menu-break-fix": {
+      "date": "2026-03-09",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: The Day the Menu Broke on iPhone"
+    },
+    "carpentry-companion-native-first-pivot-note": {
+      "date": "2026-03-10",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Why I Removed Pages and Went Native-First"
+    },
+    "carpentry-companion-plans-packaging": {
+      "date": "2026-02-27",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Packaging the App Into Plans"
+    },
+    "carpentry-companion-release-readiness-checkpoint": {
+      "date": "2026-03-10",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Release Readiness Checkpoint: Where Carpentry Companion Stands Today"
+    },
+    "carpentry-companion-safe-area-week": {
+      "date": "2026-03-04",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Safe-Area Week and the Black-Screen Scare"
+    },
+    "carpentry-companion-subscription-scaffold": {
+      "date": "2026-02-25",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Carpentry Companion: Subscription Gating Entered the App"
+    },
+    "social-post-helper-heic-support-is-not-one-format": {
+      "date": "2026-03-13",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: HEIC Support Is Not One Format"
+    },
+    "social-post-helper-honest-alt-text-beats-imagined-detail": {
+      "date": "2026-03-12",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: Honest Alt Text Beats Imagined Detail"
+    },
+    "social-post-helper-i-treated-safari-memory-like-product-work": {
+      "date": "2026-03-17",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: I Treated Safari Memory Like Product Work"
+    },
+    "social-post-helper-shipping-a-useful-non-ai-mvp": {
+      "date": "2026-03-12",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: Shipping a Useful Non-AI MVP"
+    },
+    "social-post-helper-static-export-was-a-product-decision": {
+      "date": "2026-03-12",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: Static Export Was a Product Decision"
+    },
+    "social-post-helper-the-macos-photos-picker-beat-my-first-upload-design": {
+      "date": "2026-03-13",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: The macOS Photos Picker Beat My First Upload Design"
+    },
+    "social-post-helper-why-i-chose-a-broad-safari-file-filter": {
+      "date": "2026-03-14",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: Why I Chose a Broad Safari File Filter"
+    },
+    "social-post-helper-why-i-kept-it-local-first": {
+      "date": "2026-03-12",
+      "sentAt": "2026-03-17T09:18:54+10:00",
+      "status": "bootstrapped",
+      "title": "Social Post Helper: Why I Kept It Local-First"
+    }
+  },
+  "initializedAt": "2026-03-17T09:18:54+10:00",
+  "timezone": "Australia/Brisbane"
+}
