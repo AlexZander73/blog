@@ -55,6 +55,78 @@ window.BLOG_POSTS = [
     path: "posts/barbell-easy-calculator-one-commit-full-mvp-cost-of-speed.html"
   },
   {
+    slug: "social-post-helper-i-treated-safari-memory-like-product-work",
+    title: "Social Post Helper: I Treated Safari Memory Like Product Work",
+    date: "2026-03-17",
+    excerpt: "Media apps earn suspicion fast when a browser tab starts feeling heavy. I decided that if Safari memory pressure was even a plausible concern, the product needed a direct answer instead of a shrug.",
+    tags: ["Apps", "Systems", "Build Logs"],
+    readingTime: "3 min read",
+    path: "posts/social-post-helper-i-treated-safari-memory-like-product-work.html"
+  },
+  {
+    slug: "social-post-helper-why-i-chose-a-broad-safari-file-filter",
+    title: "Social Post Helper: Why I Chose a Broad Safari File Filter",
+    date: "2026-03-14",
+    excerpt: "I ended up with a broader upload filter than I originally wanted. It was the right compromise because browser compatibility mattered more than a perfectly tidy picker.",
+    tags: ["Apps", "Systems", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-why-i-chose-a-broad-safari-file-filter.html"
+  },
+  {
+    slug: "social-post-helper-heic-support-is-not-one-format",
+    title: "Social Post Helper: HEIC Support Is Not One Format",
+    date: "2026-03-13",
+    excerpt: "I learned the usual lesson about file formats the annoying way. Saying I support HEIC means very little if the browser and picker disagree about what that format looks like.",
+    tags: ["Apps", "Notes", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-heic-support-is-not-one-format.html"
+  },
+  {
+    slug: "social-post-helper-the-macos-photos-picker-beat-my-first-upload-design",
+    title: "Social Post Helper: The macOS Photos Picker Beat My First Upload Design",
+    date: "2026-03-13",
+    excerpt: "The upload flow broke before my app really got a chance to do anything. That is the kind of problem that makes a product feel worse than the bug count suggests.",
+    tags: ["Apps", "Build Logs", "Notes"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-the-macos-photos-picker-beat-my-first-upload-design.html"
+  },
+  {
+    slug: "social-post-helper-shipping-a-useful-non-ai-mvp",
+    title: "Social Post Helper: Shipping a Useful Non-AI MVP",
+    date: "2026-03-12",
+    excerpt: "I wanted a social drafting tool that was useful before any AI showed up. Social Post Helper started as a hard constraint: make the workflow lighter without pretending the app understands images.",
+    tags: ["Apps", "Tools", "Launches"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-shipping-a-useful-non-ai-mvp.html"
+  },
+  {
+    slug: "social-post-helper-why-i-kept-it-local-first",
+    title: "Social Post Helper: Why I Kept It Local-First",
+    date: "2026-03-12",
+    excerpt: "I did not want this project to start with accounts, sync, and another database to babysit. Keeping it local-first made the MVP faster to use and clearer about its limits.",
+    tags: ["Apps", "Systems", "Notes"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-why-i-kept-it-local-first.html"
+  },
+  {
+    slug: "social-post-helper-static-export-was-a-product-decision",
+    title: "Social Post Helper: Static Export Was a Product Decision",
+    date: "2026-03-12",
+    excerpt: "I treated deployment as part of product scope, not something to bolt on later. Shipping this as a static export pushed the app toward a cleaner and more disciplined MVP.",
+    tags: ["Apps", "Systems", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-static-export-was-a-product-decision.html"
+  },
+  {
+    slug: "social-post-helper-honest-alt-text-beats-imagined-detail",
+    title: "Social Post Helper: Honest Alt Text Beats Imagined Detail",
+    date: "2026-03-12",
+    excerpt: "A non-AI media tool can be helpful without pretending it understands the image. I wanted the writing to stay honest enough that users could trust what the app was doing and what it was not doing.",
+    tags: ["AI", "Design", "Notes"],
+    readingTime: "2 min read",
+    path: "posts/social-post-helper-honest-alt-text-beats-imagined-detail.html"
+  },
+  {
     slug: "carpentry-companion-release-readiness-checkpoint",
     title: "Release Readiness Checkpoint: Where Carpentry Companion Stands Today",
     date: "2026-03-10",

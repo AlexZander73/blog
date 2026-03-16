@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Post Helper: The macOS Photos Picker Beat My First Upload Design | Builder Journal</title>
+  <meta name="description" content="The upload flow broke before my app really got a chance to do anything. That is the kind of problem that makes a product feel worse than the bug count suggests.">
+  <meta property="og:title" content="Social Post Helper: The macOS Photos Picker Beat My First Upload Design">
+  <meta property="og:description" content="The upload flow broke before my app really got a chance to do anything. That is the kind of problem that makes a product feel worse than the bug count suggests.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/social-post-helper-the-macos-photos-picker-beat-my-first-upload-design.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Apps · Build Logs · Notes</p>
+        <h1>Social Post Helper: The macOS Photos Picker Beat My First Upload Design</h1>
+        <p class="post-lead">The upload flow broke before my app really got a chance to do anything. That is the kind of problem that makes a product feel worse than the bug count suggests.</p>
+        <p class="post-meta"><span>March 13, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Apps</span>
+          <span class="tag">Build Logs</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>The first interaction failed early</h2>
+        <p>One of the most frustrating bugs I hit in Social Post Helper was not inside metadata extraction, draft generation, or storage. It was earlier than all of that. The macOS Photos picker could stay greyed out because the file input filter was too strict. I hate bugs like that. They make the whole product feel dead on arrival, and the user never gets far enough to know the rest of the app might actually work.</p>
+        <h2>Undoing the neat but brittle approach</h2>
+        <p>My first instinct had been to keep the upload control precise. That sounds responsible on paper. I wanted the picker to reflect exactly what the MVP supported. But the concrete change on 2026-03-13 was doing the opposite: I removed the strict accept filter entirely. That was not elegant. It was practical. The app already had post-selection logic for unsupported formats, so forcing the picker to be perfect up front was buying me less than I thought.</p>
+        <p>Emotionally, this was a good reset. I had to admit I was optimizing for neatness instead of reliability. A picker is not a validator I control. It is a browser and OS surface with its own weird behavior. Once I accepted that, the right move became simpler. Let people select files more freely, then validate once the app actually has the files in hand.</p>
+        <h2>Protect the first interaction</h2>
+        <p>The lesson was that the earliest user interaction is sacred. If the first button looks broken, the rest of the system does not matter. That is especially true in a tool like this, where the whole value starts with getting media into the app. I would rather clean up unsupported input after the fact than make valid input impossible.</p>
+        <p>This change also set up the next decision. Removing the filter was not necessarily the final state, but it exposed the real problem clearly enough to make a better compromise later.</p>
+
+        <blockquote>
+          Next move: keep the upload entry point forgiving, and make any unsupported-file rejection explicit and calm instead of surprising.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./social-post-helper-heic-support-is-not-one-format.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./social-post-helper-why-i-chose-a-broad-safari-file-filter.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry captures the point where the upload flow failed before app logic even ran.</p>
+        <ul>
+          <li>Evidence anchor: strict file filter removed in commit dc84177 on 2026-03-13</li>
+          <li>Emotional moment: frustration at a bug that made the whole product feel dead on arrival</li>
+          <li>Concrete win: upload flow unblocked by removing the brittle picker restriction</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

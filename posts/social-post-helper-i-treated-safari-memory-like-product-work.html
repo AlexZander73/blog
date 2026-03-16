@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Post Helper: I Treated Safari Memory Like Product Work | Builder Journal</title>
+  <meta name="description" content="Media apps earn suspicion fast when a browser tab starts feeling heavy. I decided that if Safari memory pressure was even a plausible concern, the product needed a direct answer instead of a shrug.">
+  <meta property="og:title" content="Social Post Helper: I Treated Safari Memory Like Product Work">
+  <meta property="og:description" content="Media apps earn suspicion fast when a browser tab starts feeling heavy. I decided that if Safari memory pressure was even a plausible concern, the product needed a direct answer instead of a shrug.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/social-post-helper-i-treated-safari-memory-like-product-work.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Apps · Systems · Build Logs</p>
+        <h1>Social Post Helper: I Treated Safari Memory Like Product Work</h1>
+        <p class="post-lead">Media apps earn suspicion fast when a browser tab starts feeling heavy. I decided that if Safari memory pressure was even a plausible concern, the product needed a direct answer instead of a shrug.</p>
+        <p class="post-meta"><span>March 17, 2026</span><span>3 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Apps</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>A suspicious tab is a product problem</h2>
+        <p>The most recent shift in Social Post Helper was not about new drafting output. It was about trust. When a media-heavy browser tab starts looking expensive in Safari, users do not care whether the leak is technically &quot;their fault&quot; or &quot;the browser&#x27;s fault.&quot; They just remember that your tab felt risky. I felt defensive for about five seconds when this came up, and then I realized that reaction was useless. If the product touches uploaded media and previews, memory behavior is part of the product.</p>
+        <h2>Adding visible cleanup behavior</h2>
+        <p>So I made concrete changes in the current workspace. I tightened cleanup around temporary image and video decoder objects, made sure preview URLs get released more aggressively, added a small RAM summary panel to the detected-info view, and built a 5-minute inactivity pause for unfocused tabs. That pause stops draft activity, releases previews, and makes resuming explicit. I also checked the surrounding behavior so the pause state does not race with ongoing uploads and so the current code still passes tests, lint, and type checks.</p>
+        <p>What I like about this work is that it turns a vague fear into visible behavior. A user can now see the app acknowledge resource use, and the app actively backs off when it sits idle in the background. That feels more honest than assuming garbage collection timing will save me. With media features, object URLs and decoder cleanup are not trivia. They are part of whether the product feels careful.</p>
+        <h2>Performance work has an emotional side</h2>
+        <p>The lesson here was that performance and memory are emotional problems before they are technical ones. A tab that feels suspicious loses trust quickly. I would rather slightly over-manage cleanup than leave users wondering whether the app is quietly hanging onto their files. The feature is modest, but the posture matters.</p>
+        <p>This is also a reminder that &quot;lightweight MVP&quot; is not an excuse. If I want to claim the app is simple, then it has to behave like a simple tool under stress too.</p>
+
+        <blockquote>
+          Next move: measure the effect of the inactivity pause in Safari&#x27;s memory tools and decide whether the app should become even more aggressive about releasing media state.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./social-post-helper-why-i-chose-a-broad-safari-file-filter.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="../archive.html">Back to Archive -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry covers the memory-hardening pass still living in the current workspace.</p>
+        <ul>
+          <li>Evidence anchor: working-tree changes in app/page.tsx, components/detected-info-panel.tsx, components/upload-dropzone.tsx, and lib/metadata-extractor.ts on 2026-03-17</li>
+          <li>Emotional moment: dropping the defensive reaction and treating memory pressure as product work</li>
+          <li>Concrete win: decoder cleanup, RAM summary, and a 5-minute inactivity pause for Safari-heavy sessions</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

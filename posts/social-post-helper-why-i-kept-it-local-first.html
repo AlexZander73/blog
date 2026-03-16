@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Post Helper: Why I Kept It Local-First | Builder Journal</title>
+  <meta name="description" content="I did not want this project to start with accounts, sync, and another database to babysit. Keeping it local-first made the MVP faster to use and clearer about its limits.">
+  <meta property="og:title" content="Social Post Helper: Why I Kept It Local-First">
+  <meta property="og:description" content="I did not want this project to start with accounts, sync, and another database to babysit. Keeping it local-first made the MVP faster to use and clearer about its limits.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/social-post-helper-why-i-kept-it-local-first.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Apps · Systems · Notes</p>
+        <h1>Social Post Helper: Why I Kept It Local-First</h1>
+        <p class="post-lead">I did not want this project to start with accounts, sync, and another database to babysit. Keeping it local-first made the MVP faster to use and clearer about its limits.</p>
+        <p class="post-meta"><span>March 12, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Apps</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Avoiding the familiar trap</h2>
+        <p>One of the easiest ways to bloat a small product is to act like every draft needs a cloud backend from the start. I did not want that here. Social Post Helper is meant to reduce friction around posting, so it would have been a strange move to put sign-up, storage, and account recovery in front of the first useful interaction. I felt that tension immediately. The infrastructure path looked familiar, but it also looked like a trap.</p>
+        <h2>Choosing local persistence instead</h2>
+        <p>I chose a local-first design instead. Preferences are stored in localStorage, and the app saves the last session snapshot locally so the user can reopen the context later. That was the concrete change that mattered: not just keeping settings around, but preserving enough structure that the draft workflow feels continuous instead of disposable. In practice, that means the app can remember tone, platforms, hashtag count, and the latest draft state without ever asking for an account.</p>
+        <p>The tradeoff is real, and I wanted the repo to stay honest about it. Restoring a session does not restore the original file blobs. The app can reopen metadata context and the generated drafts, but it cannot magically bring back the actual uploaded media from storage it never had. I think that is acceptable for an MVP, but only if it is explicit.</p>
+        <h2>The product pacing benefit</h2>
+        <p>The lesson here was simple: local-first is not just a privacy story. It is a product pacing story. It let me ship the core loop faster, keep deployment lightweight, and avoid inventing backend requirements before I knew I needed them. It also kept the project aligned with its own thesis: useful, practical, and not overbuilt.</p>
+        <p>I still know where this might break down. If people expect full draft libraries, cross-device continuity, or asset restore, local storage will stop being enough. That is fine. I would rather reach that limit honestly than build a backend for imaginary demand.</p>
+
+        <blockquote>
+          Next move: find out whether people reopening a session mainly need their text back, or whether missing file restoration becomes the real pain point.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./social-post-helper-shipping-a-useful-non-ai-mvp.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./social-post-helper-static-export-was-a-product-decision.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry captures the local-first boundary that shaped the MVP.</p>
+        <ul>
+          <li>Evidence anchor: README.md and lib/storage.ts on 2026-03-12</li>
+          <li>Emotional moment: recognizing the familiar backend path as a trap for a small product</li>
+          <li>Concrete win: local preferences and session snapshots without auth or a server</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>
