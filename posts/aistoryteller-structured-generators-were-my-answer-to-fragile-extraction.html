@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIStoryTeller: Structured Generators Were My Answer to Fragile Extraction | Builder Journal</title>
+  <meta name="description" content="The large 2026-02-28 snapshot commit reads like a change in philosophy, not just a feature drop. I moved toward structured generation for characters and locations because freeform extraction had become too easy to distrust.">
+  <meta property="og:title" content="AIStoryTeller: Structured Generators Were My Answer to Fragile Extraction">
+  <meta property="og:description" content="The large 2026-02-28 snapshot commit reads like a change in philosophy, not just a feature drop. I moved toward structured generation for characters and locations because freeform extraction had become too easy to distrust.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/aistoryteller-structured-generators-were-my-answer-to-fragile-extraction.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">AI · Tools · Design · Build Logs</p>
+        <h1>AIStoryTeller: Structured Generators Were My Answer to Fragile Extraction</h1>
+        <p class="post-lead">The large 2026-02-28 snapshot commit reads like a change in philosophy, not just a feature drop. I moved toward structured generation for characters and locations because freeform extraction had become too easy to distrust.</p>
+        <p class="post-meta"><span>February 28, 2026</span><span>3 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">AI</span>
+          <span class="tag">Tools</span>
+          <span class="tag">Design</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>A change in philosophy</h2>
+        <p>The biggest shift in AIStoryTeller happened on 2026-02-28, and it was not just technical. It was philosophical. The snapshot commit added Quick Build, Deep Expand, Media Prompt generation, large trait libraries, schema definitions, integrations, tests, and `llm_factory.py`, while removing `story_engine.py`. I read that not as simple expansion, but as a decision to put more weight on structured authoring and controlled expansion instead of asking the system to infer everything from narrative output.</p>
+        <p>That choice makes sense to me. Once a project starts tracking NPCs, locations, media prompts, and world-facing state, prose extraction becomes fragile. It can help. It can accelerate. But it does not deserve final authority unless it is heavily constrained. Quick Build and Deep Expand look like a response to that reality. Archetypes, traits, schema validation, and save integrations all point in the same direction: build canonical objects first, then let generated text decorate or extend them.</p>
+
+        <h2>Relief through structure</h2>
+        <p>The emotional moment here is relief, and I mean that in the engineering sense. I know the relief that comes when a project stops asking one fuzzy mechanism to do too much. Freeform generation is fun right up until I want repeatability, editing, and dependable downstream behavior. The concrete change was the introduction of structured generator modules, content libraries, schema-backed expansion, and media prompt tooling in one large snapshot.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson is one I trust more now than I did when I first started building AI-heavy apps: structure is not the enemy of creativity. In a system like AIStoryTeller, structure is what lets creativity survive contact with persistence, UI state, and reuse. If a character card, a location, and a media prompt all need to stay coherent, I want a canonical data shape sitting underneath them.</p>
+        <p>This commit also shows the cost of that decision. The repo got much larger. The content libraries are heavy. The UI surface expanded again. But I would rather pay the maintenance cost of structure than the debugging cost of hallucinated authority.</p>
+
+        <blockquote>
+          Next move: keep narrowing where freeform output is allowed to mutate canonical state, and make the structured layer easier to inspect and edit.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./aistoryteller-user-history-had-to-become-a-server-problem.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./aistoryteller-optimizing-for-a-small-local-machine-changed-the-product.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>AIStoryTeller systems note from the move toward structured authoring.</p>
+        <ul>
+          <li>Evidence anchor: snapshot commit `e51af20` on 2026-02-28</li>
+          <li>Emotional moment: relief that structure could replace fragile guessing</li>
+          <li>Concrete win: Quick Build, Deep Expand, schemas, and trait libraries landed together</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

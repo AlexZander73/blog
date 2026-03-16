@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIStoryTeller: Optimizing for a Small Local Machine Changed the Product | Builder Journal</title>
+  <meta name="description" content="The optimization pass on 2026-02-28 was not cleanup around the edges. It changed defaults across image generation, LLM loading, helper behavior, and TTS because the machine mattered as much as the model.">
+  <meta property="og:title" content="AIStoryTeller: Optimizing for a Small Local Machine Changed the Product">
+  <meta property="og:description" content="The optimization pass on 2026-02-28 was not cleanup around the edges. It changed defaults across image generation, LLM loading, helper behavior, and TTS because the machine mattered as much as the model.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/aistoryteller-optimizing-for-a-small-local-machine-changed-the-product.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Experiments · Build Logs · Notes</p>
+        <h1>AIStoryTeller: Optimizing for a Small Local Machine Changed the Product</h1>
+        <p class="post-lead">The optimization pass on 2026-02-28 was not cleanup around the edges. It changed defaults across image generation, LLM loading, helper behavior, and TTS because the machine mattered as much as the model.</p>
+        <p class="post-meta"><span>February 28, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Experiments</span>
+          <span class="tag">Build Logs</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Hardware shaped the product</h2>
+        <p>I like optimization work most when it is honest about what it is protecting. In AIStoryTeller, the 2026-02-28 optimization pass was clearly protecting usability on a constrained local machine. The commit touched configs, UI behavior, caching, server runtime paths, and the TTS engine. It lowered default image load, improved model caching, tuned helper behavior, and changed TTS warm-state behavior. This is the kind of work that decides whether the product remains pleasant enough to keep using.</p>
+        <p>What I respect here is the willingness to treat defaults as product design. It is easy to leave aggressive settings in place and assume powerful hardware will solve the problem later. That usually creates the wrong experience now. AIStoryTeller instead moved toward faster defaults and tighter runtime behavior. In the current config state, image quality defaults are lighter, helper CPU-only mode is enabled, and TTS prewarm is disabled.</p>
+
+        <h2>Ambition meets the box on the desk</h2>
+        <p>The emotional moment in work like this is familiar. Local AI always creates tension between ambition and what the box on my desk can actually support. I do not enjoy backing off from theoretical quality, but I dislike a sluggish product more. The concrete change was a cross-cutting runtime pass that tried to make the stack cheaper to hold in memory and easier to reuse without unnecessary reloads.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson is simple and more builders need to say it out loud: on-device defaults are not a technical footnote. They shape the product as much as the UI does. If generation is too slow, the feature is weaker no matter how good the output can be in theory.</p>
+        <p>This pass also set up the next chapter. Once hardware gets better, I can turn quality back up with intent instead of using raw hope as a performance strategy.</p>
+
+        <blockquote>
+          Next move: benchmark the stack on upgraded hardware and raise quality only where the new headroom clearly pays for itself.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./aistoryteller-structured-generators-were-my-answer-to-fragile-extraction.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="../archive.html">Back to Archive -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>AIStoryTeller optimization note from the local runtime pass.</p>
+        <ul>
+          <li>Evidence anchor: optimization commit `f70ccec` on 2026-02-28</li>
+          <li>Emotional moment: choosing usable defaults over theoretical max quality</li>
+          <li>Concrete win: lighter image, helper, cache, and TTS runtime behavior</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

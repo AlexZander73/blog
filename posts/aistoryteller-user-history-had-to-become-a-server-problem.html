@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIStoryTeller: User History Had to Become a Server Problem | Builder Journal</title>
+  <meta name="description" content="Personal story tools break the moment they blur one user into another. On 2026-02-20 AIStoryTeller drew that boundary at the server layer.">
+  <meta property="og:title" content="AIStoryTeller: User History Had to Become a Server Problem">
+  <meta property="og:description" content="Personal story tools break the moment they blur one user into another. On 2026-02-20 AIStoryTeller drew that boundary at the server layer.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/aistoryteller-user-history-had-to-become-a-server-problem.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Apps · Notes</p>
+        <h1>AIStoryTeller: User History Had to Become a Server Problem</h1>
+        <p class="post-lead">Personal story tools break the moment they blur one user into another. On 2026-02-20 AIStoryTeller drew that boundary at the server layer.</p>
+        <p class="post-meta"><span>February 20, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Apps</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Trust starts with boundaries</h2>
+        <p>I think persistence bugs are product bugs before they are storage bugs. That is why the 2026-02-20 commit, Use server history per user, matters more than its size suggests. In a personal storytelling tool, mixed history is not a small flaw. It cuts straight into trust. If the wrong story, state, or memory shows up under the wrong person, the product stops feeling personal and starts feeling careless.</p>
+        <p>The fix here was clear in direction: move history separation to the server side. That matters because it changes where responsibility lives. Browser state is convenient, but convenience is not the same thing as ownership. Once AIStoryTeller began growing memory, world state, starters, and session behavior, user separation had to become explicit. A server boundary is not automatically perfect, but it is at least a serious answer to a serious problem.</p>
+
+        <h2>When experimental becomes personal</h2>
+        <p>The emotional moment I attach to this kind of change is not panic. It is a colder feeling than that. It is the moment I realize a system has crossed from experimental toy behavior into real user expectation. That is when I stop asking whether a feature technically works and start asking whether it protects the person using it. The concrete change was server-managed per-user history. The deeper change was treating identity as product state.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson is blunt: if a tool stores personal creative work, multi-user separation is not polish. It belongs in the core design. I can accept missing features longer than I can accept fuzzy ownership boundaries. This repo's history suggests AIStoryTeller learned that early enough to course-correct.</p>
+        <p>There is also a secondary lesson here about local-first apps. Local does not remove the need for clean boundaries. It just changes where those boundaries live.</p>
+
+        <blockquote>
+          Next move: keep all durable story state aligned to user and session identity before adding more adaptive behavior on top.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./aistoryteller-repairing-npc-state-instead-of-faking-it.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./aistoryteller-structured-generators-were-my-answer-to-fragile-extraction.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>AIStoryTeller systems note on user trust and history boundaries.</p>
+        <ul>
+          <li>Evidence anchor: per-user history commit `d13cbff` on 2026-02-20</li>
+          <li>Emotional moment: realizing identity had become product state</li>
+          <li>Concrete win: history moved from loose browser assumptions into the server layer</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

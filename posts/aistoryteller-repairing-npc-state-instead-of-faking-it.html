@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIStoryTeller: Repairing NPC State Instead of Faking It | Builder Journal</title>
+  <meta name="description" content="The 2026-02-19 fix commit is one of the most honest moments in this repo. It says the NPC pipeline needed a repair, not a cosmetic patch.">
+  <meta property="og:title" content="AIStoryTeller: Repairing NPC State Instead of Faking It">
+  <meta property="og:description" content="The 2026-02-19 fix commit is one of the most honest moments in this repo. It says the NPC pipeline needed a repair, not a cosmetic patch.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/aistoryteller-repairing-npc-state-instead-of-faking-it.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">AI · Systems · Notes · Build Logs</p>
+        <h1>AIStoryTeller: Repairing NPC State Instead of Faking It</h1>
+        <p class="post-lead">The 2026-02-19 fix commit is one of the most honest moments in this repo. It says the NPC pipeline needed a repair, not a cosmetic patch.</p>
+        <p class="post-meta"><span>February 19, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">AI</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Notes</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>Honesty beats illusion</h2>
+        <p>One of the fastest ways to lose trust in an AI product is to let the UI pretend it knows more than the system actually knows. That is why the 2026-02-19 commit matters to me. It directly fixed NPC list handling, added a raw toggle, and worked on status fallback. Even without reading a journal, I can tell what kind of problem this was. Story output and UI state had drifted apart enough that the app needed a way to show the truth more directly.</p>
+        <p>That raw toggle is the detail I keep coming back to. Whenever a product adds a raw view, it is usually admitting that the polished view cannot always be trusted yet. I respect that admission. In an AI storytelling app, derived state is always tempting. But if the parser is brittle, the polished layer becomes a liar. A raw escape hatch is not glamorous. It is responsible.</p>
+
+        <h2>Repairing trust</h2>
+        <p>The emotional moment here is frustration, but it is the useful kind. I dislike the class of bug that makes a system feel half-alive, where some of the right names and statuses appear just often enough to look convincing. Those bugs waste time because they do not fail loudly. The concrete change was to repair NPC list behavior and add status fallback instead of doubling down on inference.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson is one I trust more every year: canonical state beats decorative certainty. If the UI depends on extracted story details, it needs a fallback that is less clever and more dependable. It also needs tooling that helps me see what the system actually received before it tries to summarize it.</p>
+        <p>This commit is small compared with the giant feature drops in the repo, but it may be more important. It shows the point where AIStoryTeller started choosing honesty over illusion in one of its most fragile paths.</p>
+
+        <blockquote>
+          Next move: keep moving story-derived data toward structured truth and treat prose parsing as assistive, not authoritative.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./aistoryteller-what-a-wip-commit-cost-me.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./aistoryteller-user-history-had-to-become-a-server-problem.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>AIStoryTeller repair note from the NPC and status pipeline.</p>
+        <ul>
+          <li>Evidence anchor: repair commit `f4fc0cd` on 2026-02-19</li>
+          <li>Emotional moment: frustration with half-correct derived UI state</li>
+          <li>Concrete win: raw toggle and fallback status behavior replaced fragile illusion</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

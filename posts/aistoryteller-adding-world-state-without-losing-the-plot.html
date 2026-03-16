@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIStoryTeller: Adding World State Without Losing the Plot | Builder Journal</title>
+  <meta name="description" content="On 2026-02-17 AIStoryTeller grew from a story interface into a fuller story system. Maps, world state, presets, starter content, and TTS safeguards all arrived in the same wave.">
+  <meta property="og:title" content="AIStoryTeller: Adding World State Without Losing the Plot">
+  <meta property="og:description" content="On 2026-02-17 AIStoryTeller grew from a story interface into a fuller story system. Maps, world state, presets, starter content, and TTS safeguards all arrived in the same wave.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/aistoryteller-adding-world-state-without-losing-the-plot.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Games · Systems · Design · Build Logs</p>
+        <h1>AIStoryTeller: Adding World State Without Losing the Plot</h1>
+        <p class="post-lead">On 2026-02-17 AIStoryTeller grew from a story interface into a fuller story system. Maps, world state, presets, starter content, and TTS safeguards all arrived in the same wave.</p>
+        <p class="post-meta"><span>February 17, 2026</span><span>2 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Games</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Design</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>Text was not enough anymore</h2>
+        <p>By 2026-02-17, AIStoryTeller had moved past the question of whether it could generate text. The real question had become whether it could hold onto a world. That commit answered with scale. It added a map engine, a world manager, prefab support, story presets, starter data, smoketests, image prompting guides, and a large amount of UI work. A storytelling tool stops feeling abstract once it begins to present a world, not just output one.</p>
+        <p>This was the point where the repo started acting like a game-adjacent system instead of a chat window with ambitions. Presets such as tavern slices, forest pacts, dungeon frontier, and court intrigue shifted the app toward reusable scenario design. Starter files for characters and locations did the same. The concrete change was not just more content. It was a new assumption: the app should know something about places, parties, and recurring setup, not force the model to rediscover everything every turn.</p>
+
+        <h2>Admitting what the project really is</h2>
+        <p>I feel a particular kind of respect when I look at a commit like this. It is the respect I have for the moment a project admits what it really is. AIStoryTeller was no longer pretending to be a minimal tool. It was taking on the burden of being a system with memory, structure, and presentation. That is exciting, but it is also when the easy version of local AI development ends.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson here is that world state helps only if it is treated as state, not flavor. The moment I add maps, presets, and world managers, I have to care about integrity. I have to ask what persists, what gets inferred, and what the UI is allowed to guess. The repo history shows that those questions became painful almost immediately, which is exactly what I would expect.</p>
+        <p>The next step after adding world structure was not more content. It was surviving the first round of instability that comes when prose, state, and UI all start depending on one another.</p>
+
+        <blockquote>
+          Next move: tighten the places where story output mutates world-facing state.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./aistoryteller-when-one-writer-became-a-stack.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./aistoryteller-what-a-wip-commit-cost-me.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>AIStoryTeller timeline entry from the shift into world-aware state.</p>
+        <ul>
+          <li>Evidence anchor: expansion commit `3a4649c` on 2026-02-17</li>
+          <li>Emotional moment: recognizing the project had become a true story system</li>
+          <li>Concrete win: maps, world manager, presets, and starter content landed together</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

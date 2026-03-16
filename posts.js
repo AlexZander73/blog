@@ -100,6 +100,78 @@ window.BLOG_POSTS = [
     path: "posts/carpentry-companion-safe-area-week.html"
   },
   {
+    slug: "aistoryteller-structured-generators-were-my-answer-to-fragile-extraction",
+    title: "AIStoryTeller: Structured Generators Were My Answer to Fragile Extraction",
+    date: "2026-02-28",
+    excerpt: "The large 2026-02-28 snapshot commit reads like a change in philosophy, not just a feature drop. I moved toward structured generation for characters and locations because freeform extraction had become too easy to distrust.",
+    tags: ["AI", "Tools", "Design", "Build Logs"],
+    readingTime: "3 min read",
+    path: "posts/aistoryteller-structured-generators-were-my-answer-to-fragile-extraction.html"
+  },
+  {
+    slug: "aistoryteller-optimizing-for-a-small-local-machine-changed-the-product",
+    title: "AIStoryTeller: Optimizing for a Small Local Machine Changed the Product",
+    date: "2026-02-28",
+    excerpt: "The optimization pass on 2026-02-28 was not cleanup around the edges. It changed defaults across image generation, LLM loading, helper behavior, and TTS because the machine mattered as much as the model.",
+    tags: ["Systems", "Experiments", "Build Logs", "Notes"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-optimizing-for-a-small-local-machine-changed-the-product.html"
+  },
+  {
+    slug: "aistoryteller-user-history-had-to-become-a-server-problem",
+    title: "AIStoryTeller: User History Had to Become a Server Problem",
+    date: "2026-02-20",
+    excerpt: "Personal story tools break the moment they blur one user into another. On 2026-02-20 AIStoryTeller drew that boundary at the server layer.",
+    tags: ["Systems", "Apps", "Notes"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-user-history-had-to-become-a-server-problem.html"
+  },
+  {
+    slug: "aistoryteller-repairing-npc-state-instead-of-faking-it",
+    title: "AIStoryTeller: Repairing NPC State Instead of Faking It",
+    date: "2026-02-19",
+    excerpt: "The 2026-02-19 fix commit is one of the most honest moments in this repo. It says the NPC pipeline needed a repair, not a cosmetic patch.",
+    tags: ["AI", "Systems", "Notes", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-repairing-npc-state-instead-of-faking-it.html"
+  },
+  {
+    slug: "aistoryteller-what-a-wip-commit-cost-me",
+    title: "AIStoryTeller: What a WIP Commit Cost Me",
+    date: "2026-02-18",
+    excerpt: "I pushed a WIP commit for sentence finishing, retry logic, and a world export snapshot on 2026-02-18. The next two days of repo history explain why I no longer treat that label lightly.",
+    tags: ["Notes", "Build Logs", "Systems"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-what-a-wip-commit-cost-me.html"
+  },
+  {
+    slug: "aistoryteller-adding-world-state-without-losing-the-plot",
+    title: "AIStoryTeller: Adding World State Without Losing the Plot",
+    date: "2026-02-17",
+    excerpt: "On 2026-02-17 AIStoryTeller grew from a story interface into a fuller story system. Maps, world state, presets, starter content, and TTS safeguards all arrived in the same wave.",
+    tags: ["Games", "Systems", "Design", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-adding-world-state-without-losing-the-plot.html"
+  },
+  {
+    slug: "aistoryteller-when-one-writer-became-a-stack",
+    title: "AIStoryTeller: When One Writer Became a Stack",
+    date: "2026-02-14",
+    excerpt: "The 2026-02-14 commit is where AIStoryTeller stopped feeling small. I added image orchestration, prompt tooling, IME pieces, TTS runtime, scripts, configs, and tests in one push.",
+    tags: ["AI", "Systems", "Build Logs", "Tools"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-when-one-writer-became-a-stack.html"
+  },
+  {
+    slug: "aistoryteller-starting-with-a-local-story-shell",
+    title: "AIStoryTeller: Starting With a Local Story Shell",
+    date: "2026-02-06",
+    excerpt: "AIStoryTeller started as a direct, almost stubborn vertical slice. I put the server, UI, image layer, and story engine in place first and let the architecture wait.",
+    tags: ["AI", "Apps", "Games", "Build Logs"],
+    readingTime: "2 min read",
+    path: "posts/aistoryteller-starting-with-a-local-story-shell.html"
+  },
+  {
     slug: "carpentry-companion-capacitor-native-step",
     title: "Carpentry Companion: Choosing Native Without Rewriting",
     date: "2026-02-28",
