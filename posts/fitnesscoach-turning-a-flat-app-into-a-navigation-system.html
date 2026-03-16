@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Turning a Flat App into a Navigation System | Builder Journal</title>
+  <meta name="description" content="I moved from screens that merely existed to flows that actually connected. That shift changed the product from a static dashboard feel into something I could navigate with intent.">
+  <meta property="og:title" content="FitnessCoach: Turning a Flat App into a Navigation System">
+  <meta property="og:description" content="I moved from screens that merely existed to flows that actually connected. That shift changed the product from a static dashboard feel into something I could navigate with intent.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-turning-a-flat-app-into-a-navigation-system.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Design · Apps · Build Logs</p>
+        <h1>FitnessCoach: Turning a Flat App into a Navigation System</h1>
+        <p class="post-lead">I moved from screens that merely existed to flows that actually connected. That shift changed the product from a static dashboard feel into something I could navigate with intent.</p>
+        <p class="post-meta"><span>March 22, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Design</span>
+          <span class="tag">Apps</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>The app could do things, but not yet flow</h2>
+        <p>By 2026-03-17, I had enough base functionality to see a new problem: the app could do things, but the path between those things was too flat. I added docs/sprint-roadmap.md and then shipped a broad UX layer in 58910d6 with detail routes, session surfaces, and analytics drill-down. I felt both excited and slightly overwhelmed because this was the first time the product started behaving like a real workflow instead of a demo.</p>
+        <h2>Adding depth and drill-down</h2>
+        <p>The concrete change was structural navigation depth. I added route-level pages for workout detail, exercise detail, plan-day detail, session recap, and progress metric detail. I also made previously static cards and list rows open meaningful contexts, so users could move from summary to action without dead ends.</p>
+        <p>This mattered because habit products live or die on friction. If I cannot go from "today overview" to "exact movement cue" in one or two taps, I probably will not use the app consistently. The sprint plan made that problem explicit and gave me an implementation sequence that was practical instead of chaotic.</p>
+        <h2>Thinking in loops instead of screens</h2>
+        <p>The lesson for me was simple: feature quantity does not equal usability. Navigation intent has to be designed as a product surface. I stopped thinking in isolated screens and started thinking in user loops: check in, adjust, train, recap, review trend, repeat.</p>
+        <p>That shift also made future prioritization easier. Once the loops are visible, missing pieces stand out quickly. I can now evaluate new work by asking whether it shortens or clarifies one of those loops.</p>
+
+        <blockquote>
+          Next move: add stronger iPad-specific split-pane behavior to make planner and analytics exploration faster on larger screens.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./fitnesscoach-cleaning-up-build-artifacts-before-debt.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./fitnesscoach-making-sessions-fast-enough-to-use-mid-workout.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry covers the UX sprint that turned isolated screens into connected loops.</p>
+        <ul>
+          <li>Evidence anchor: UX sprint roadmap and commit 58910d6 on 2026-03-17</li>
+          <li>Emotional moment: excitement mixed with slight overwhelm as the product stopped feeling like a demo</li>
+          <li>Concrete win: detail routes, session surfaces, and analytics drill-down that gave the app real navigational depth</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

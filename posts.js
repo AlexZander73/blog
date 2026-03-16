@@ -19,6 +19,24 @@ window.BLOG_POSTS = [
     isFeatured: true
   },
   {
+    slug: "fitnesscoach-personalization-without-guesswork",
+    title: "FitnessCoach: Personalization Without Guesswork",
+    date: "2026-03-25",
+    excerpt: "I pushed personalization through deterministic shortcuts instead of opaque recommendations. Launcher, pinned actions, favorites, and prefetching made the app feel faster and more personal at the same time.",
+    tags: ["Apps", "Build Logs", "Systems"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-personalization-without-guesswork.html"
+  },
+  {
+    slug: "fitnesscoach-safety-ux-is-product-ux",
+    title: "FitnessCoach: Safety UX Is Product UX",
+    date: "2026-03-24",
+    excerpt: "Safety messaging is not a legal footer in this project; it is part of the core interaction model. I added red-flag handling and conservative pathways so the app can adapt without pretending to diagnose.",
+    tags: ["Systems", "Design", "Notes"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-safety-ux-is-product-ux.html"
+  },
+  {
     slug: "barbell-easy-calculator-impossible-targets-user-trust",
     title: "Barbell Easy Calculator: Handling Impossible Targets Without Breaking User Trust",
     date: "2026-03-24",
@@ -26,6 +44,24 @@ window.BLOG_POSTS = [
     tags: ["Notes", "Systems", "Build Logs"],
     readingTime: "4 min read",
     path: "posts/barbell-easy-calculator-impossible-targets-user-trust.html"
+  },
+  {
+    slug: "fitnesscoach-making-sessions-fast-enough-to-use-mid-workout",
+    title: "FitnessCoach: Making Sessions Fast Enough to Use Mid-Workout",
+    date: "2026-03-23",
+    excerpt: "I focused on in-session speed because the best workout plan still fails if logging is annoying. The active session and recap flow became the practical center of daily use.",
+    tags: ["Apps", "Design", "Build Logs"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-making-sessions-fast-enough-to-use-mid-workout.html"
+  },
+  {
+    slug: "fitnesscoach-turning-a-flat-app-into-a-navigation-system",
+    title: "FitnessCoach: Turning a Flat App into a Navigation System",
+    date: "2026-03-22",
+    excerpt: "I moved from screens that merely existed to flows that actually connected. That shift changed the product from a static dashboard feel into something I could navigate with intent.",
+    tags: ["Design", "Apps", "Build Logs"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-turning-a-flat-app-into-a-navigation-system.html"
   },
   {
     slug: "barbell-easy-calculator-deterministic-plate-solver-trust",
@@ -37,6 +73,24 @@ window.BLOG_POSTS = [
     path: "posts/barbell-easy-calculator-deterministic-plate-solver-trust.html"
   },
   {
+    slug: "fitnesscoach-cleaning-up-build-artifacts-before-debt",
+    title: "FitnessCoach: Cleaning Up Build Artifacts Before They Became Debt",
+    date: "2026-03-21",
+    excerpt: "One of the most useful commits was not a feature commit. I removed generated artifacts and tightened build expectations before they quietly became team-wide friction.",
+    tags: ["Build Logs", "Notes", "Systems"],
+    readingTime: "3 min read",
+    path: "posts/fitnesscoach-cleaning-up-build-artifacts-before-debt.html"
+  },
+  {
+    slug: "fitnesscoach-designing-the-api-and-schema-before-ui-polish",
+    title: "FitnessCoach: Designing the API and Schema Before Chasing UI Polish",
+    date: "2026-03-20",
+    excerpt: "I chose to stabilize contracts and schema early, before polishing every client interaction. It slowed visible UI progress for a bit, but it prevented cross-layer drift.",
+    tags: ["Systems", "Build Logs", "Notes"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-designing-the-api-and-schema-before-ui-polish.html"
+  },
+  {
     slug: "barbell-easy-calculator-why-react-capacitor-gym-utility",
     title: "Barbell Easy Calculator: Why I Chose React + Capacitor for a Gym Utility",
     date: "2026-03-20",
@@ -44,6 +98,24 @@ window.BLOG_POSTS = [
     tags: ["Systems", "Apps", "Tools"],
     readingTime: "4 min read",
     path: "posts/barbell-easy-calculator-why-react-capacitor-gym-utility.html"
+  },
+  {
+    slug: "fitnesscoach-building-a-deterministic-engine-i-can-defend",
+    title: "FitnessCoach: Building a Deterministic Engine I Can Defend",
+    date: "2026-03-19",
+    excerpt: "I committed to deterministic recommendations because I wanted every adjustment to be explainable and reviewable. That forced more structure, but it also made the safety story honest.",
+    tags: ["Systems", "Notes", "Apps"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-building-a-deterministic-engine-i-can-defend.html"
+  },
+  {
+    slug: "fitnesscoach-why-i-pivoted-to-a-capacitor-client",
+    title: "FitnessCoach: Why I Pivoted to a Capacitor Client",
+    date: "2026-03-18",
+    excerpt: "I changed the client stack early, even though it meant touching almost everything at once. That decision hurt in the short term, but it gave the project a cleaner path to Android without a full rebuild.",
+    tags: ["Apps", "Build Logs", "Systems"],
+    readingTime: "4 min read",
+    path: "posts/fitnesscoach-why-i-pivoted-to-a-capacitor-client.html"
   },
   {
     slug: "barbell-easy-calculator-one-commit-full-mvp-cost-of-speed",

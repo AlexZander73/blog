@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Why I Pivoted to a Capacitor Client | Builder Journal</title>
+  <meta name="description" content="I changed the client stack early, even though it meant touching almost everything at once. That decision hurt in the short term, but it gave the project a cleaner path to Android without a full rebuild.">
+  <meta property="og:title" content="FitnessCoach: Why I Pivoted to a Capacitor Client">
+  <meta property="og:description" content="I changed the client stack early, even though it meant touching almost everything at once. That decision hurt in the short term, but it gave the project a cleaner path to Android without a full rebuild.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-why-i-pivoted-to-a-capacitor-client.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Apps · Build Logs · Systems</p>
+        <h1>FitnessCoach: Why I Pivoted to a Capacitor Client</h1>
+        <p class="post-lead">I changed the client stack early, even though it meant touching almost everything at once. That decision hurt in the short term, but it gave the project a cleaner path to Android without a full rebuild.</p>
+        <p class="post-meta"><span>March 18, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Apps</span>
+          <span class="tag">Build Logs</span>
+          <span class="tag">Systems</span>
+        </div>
+
+        <h2>Paying for the hard decision early</h2>
+        <p>I made the hardest architectural move early: I migrated the client direction to a Capacitor web app and removed the Expo-first path in commit e46f0c2 on 2026-03-12. That one commit touched the client, API, admin panel, shared packages, docs, and seed content. It was not elegant in the moment. I remember feeling that mix of relief and panic that happens when a decision is clearly right but still expensive.</p>
+        <h2>One shared client, one clearer direction</h2>
+        <p>The concrete change was simple to describe and hard to execute: one shared client codebase with React, Vite, TypeScript, and Capacitor, backed by a shared rules engine and shared contracts. I also documented the architecture immediately so the repo would not become a pile of disconnected decisions. That architecture summary became my anchor when the code got noisy.</p>
+        <p>The tradeoff was obvious. I accepted webview constraints and plugin complexity because I wanted platform continuity more than native-per-screen custom work. If I had stayed split across stack assumptions, I would have paid that cost later with more breakage and more migration debt. I wanted the pain once, not repeatedly.</p>
+        <h2>What the pivot clarified</h2>
+        <p>What I learned is that a cross-platform promise is only real when the core logic is platform-agnostic and the contracts are shared. A monorepo alone does not guarantee this. The package boundaries had to enforce it: rules in one place, contracts in one place, content in one place.</p>
+        <p>I still treat this as an early-stage build, not a finished product. But this pivot removed one major strategic uncertainty for me. I now know where this project stands when I think about iPhone-first today and Android expansion tomorrow.</p>
+
+        <blockquote>
+          Next move: lock plugin boundaries and document exactly which native capabilities will require custom bridge work.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="../archive.html">&lt;- Back to Archive</a>
+          <a class="text-link" href="./fitnesscoach-building-a-deterministic-engine-i-can-defend.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry covers the early client-stack pivot that shaped the whole product direction.</p>
+        <ul>
+          <li>Evidence anchor: client migration to Capacitor in commit e46f0c2 on 2026-03-12</li>
+          <li>Emotional moment: relief and panic arriving at the same time when the expensive decision felt right</li>
+          <li>Concrete win: one shared React, Vite, TypeScript, and Capacitor client path for future Android expansion</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

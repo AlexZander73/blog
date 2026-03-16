@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Cleaning Up Build Artifacts Before They Became Debt | Builder Journal</title>
+  <meta name="description" content="One of the most useful commits was not a feature commit. I removed generated artifacts and tightened build expectations before they quietly became team-wide friction.">
+  <meta property="og:title" content="FitnessCoach: Cleaning Up Build Artifacts Before They Became Debt">
+  <meta property="og:description" content="One of the most useful commits was not a feature commit. I removed generated artifacts and tightened build expectations before they quietly became team-wide friction.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-cleaning-up-build-artifacts-before-debt.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Build Logs · Notes · Systems</p>
+        <h1>FitnessCoach: Cleaning Up Build Artifacts Before They Became Debt</h1>
+        <p class="post-lead">One of the most useful commits was not a feature commit. I removed generated artifacts and tightened build expectations before they quietly became team-wide friction.</p>
+        <p class="post-meta"><span>March 21, 2026</span><span>3 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Build Logs</span>
+          <span class="tag">Notes</span>
+          <span class="tag">Systems</span>
+        </div>
+
+        <h2>A quiet but strategic cleanup</h2>
+        <p>The 2026-03-12 cleanup commit d03467a is easy to overlook, but it was one of the healthiest changes in this repository. I removed generated JS files, local workspace artifacts, and other non-source noise. I felt a little embarrassed when I saw how much generated output had slipped into tracking, because that usually signals blurred boundaries between source and build output.</p>
+        <h2>Removing noise before it became normal</h2>
+        <p>The concrete change was large but mechanical: dozens of generated files removed, with .gitignore tightened so they do not drift back in the same way. That included generated client JS duplicates and local workspace state artifacts that have no business in long-term history.</p>
+        <p>The immediate payoff was clarity. Diffs got smaller and more intentional. Reviewing actual product changes became faster because I was no longer parsing build churn. It also reduced accidental "works on my machine" residue in commits, which is a subtle but real risk when moving quickly.</p>
+        <h2>Hygiene is velocity work</h2>
+        <p>The bigger lesson is that repository hygiene is product velocity work. It is tempting to treat it as optional cleanup for later, especially when features are moving. But when you defer hygiene, every future commit pays tax. I would rather pay that cost once and keep momentum clean.</p>
+        <p>This commit also reinforced my preference for explicit build scripts and source-only commits. The less ambiguity there is about what should be versioned, the easier it is to move fast without creating hidden maintenance drag.</p>
+
+        <blockquote>
+          Next move: add CI guardrails that fail on committed generated artifacts so this problem does not reappear during rapid iteration.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./fitnesscoach-designing-the-api-and-schema-before-ui-polish.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./fitnesscoach-turning-a-flat-app-into-a-navigation-system.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This post is about the cleanup pass that reduced repo noise before it became normal debt.</p>
+        <ul>
+          <li>Evidence anchor: cleanup commit d03467a on 2026-03-12 and tightened ignore rules</li>
+          <li>Emotional moment: embarrassment at how much generated output had slipped into tracking</li>
+          <li>Concrete win: cleaner diffs, tighter build expectations, and less accidental artifact drift</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

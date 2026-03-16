@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Designing the API and Schema Before Chasing UI Polish | Builder Journal</title>
+  <meta name="description" content="I chose to stabilize contracts and schema early, before polishing every client interaction. It slowed visible UI progress for a bit, but it prevented cross-layer drift.">
+  <meta property="og:title" content="FitnessCoach: Designing the API and Schema Before Chasing UI Polish">
+  <meta property="og:description" content="I chose to stabilize contracts and schema early, before polishing every client interaction. It slowed visible UI progress for a bit, but it prevented cross-layer drift.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-designing-the-api-and-schema-before-ui-polish.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Build Logs · Notes</p>
+        <h1>FitnessCoach: Designing the API and Schema Before Chasing UI Polish</h1>
+        <p class="post-lead">I chose to stabilize contracts and schema early, before polishing every client interaction. It slowed visible UI progress for a bit, but it prevented cross-layer drift.</p>
+        <p class="post-meta"><span>March 20, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Build Logs</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Choosing invisible work first</h2>
+        <p>On 2026-03-12, I made a decision that felt boring but saved me later: lock API contracts and schema structure before chasing visual polish. The repository shows this clearly in the same period that introduced docs/api-contract.md, docs/database-schema.md, and the Prisma schema. I remember feeling impatient because interface work is immediately rewarding, while contract work is mostly preventive.</p>
+        <h2>Versioned contracts and a stable target</h2>
+        <p>The concrete change was versioned API design under /api/v1, with an explicit envelope and shared Zod contracts in packages/contracts. I also mapped core domains in Prisma across identity, planning, sessions, symptoms, safety, metrics, and educational content. Once that model existed, client and admin surfaces had a more stable target.</p>
+        <p>The tradeoff was speed perception. Early product demos look better with shiny screens than with well-typed contracts nobody sees. But I had already felt this pain in past projects: once UI grows around unstable models, every fix becomes expensive. I did not want to relive that.</p>
+        <h2>Schema design is product design</h2>
+        <p>The key lesson was that schema design is product design in disguise. If symptom reports are unstructured, safety logic gets weak. If workout logs are shallow, analytics become noise. If endpoint versioning is absent, future changes become breaking changes. That is not backend purity; it directly affects user trust.</p>
+        <p>By handling these system boundaries early, I got a cleaner runway for later UX sprints. When I added deeper pages and session workflows in the next major update, I was wiring into known contracts rather than improvising new payloads under pressure.</p>
+
+        <blockquote>
+          Next move: finish auth integration with explicit authorization boundaries so these contracts can safely support multi-user production use.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./fitnesscoach-building-a-deterministic-engine-i-can-defend.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./fitnesscoach-cleaning-up-build-artifacts-before-debt.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry tracks the contract-first decision behind the client, API, and admin layers.</p>
+        <ul>
+          <li>Evidence anchor: docs/api-contract.md, docs/database-schema.md, and shared contracts from 2026-03-12</li>
+          <li>Emotional moment: impatience at doing preventive system work before visible polish</li>
+          <li>Concrete win: versioned /api/v1 contracts and a schema stable enough for later UX expansion</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

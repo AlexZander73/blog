@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Building a Deterministic Engine I Can Defend | Builder Journal</title>
+  <meta name="description" content="I committed to deterministic recommendations because I wanted every adjustment to be explainable and reviewable. That forced more structure, but it also made the safety story honest.">
+  <meta property="og:title" content="FitnessCoach: Building a Deterministic Engine I Can Defend">
+  <meta property="og:description" content="I committed to deterministic recommendations because I wanted every adjustment to be explainable and reviewable. That forced more structure, but it also made the safety story honest.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-building-a-deterministic-engine-i-can-defend.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Notes · Apps</p>
+        <h1>FitnessCoach: Building a Deterministic Engine I Can Defend</h1>
+        <p class="post-lead">I committed to deterministic recommendations because I wanted every adjustment to be explainable and reviewable. That forced more structure, but it also made the safety story honest.</p>
+        <p class="post-meta"><span>March 19, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Notes</span>
+          <span class="tag">Apps</span>
+        </div>
+
+        <h2>Why determinism mattered here</h2>
+        <p>One of my non-negotiables in FitnessCoach is that recommendation output should be deterministic, not improvisational. I wanted to be able to point to a rule and say, "this is why the workout changed." When I worked through packages/rules-engine and the associated docs, I felt a quiet kind of confidence I rarely get with fuzzy systems. The logic may be strict, but it is legible.</p>
+        <h2>Building a pipeline I could explain</h2>
+        <p>The concrete change was the pipeline itself: goal selection, candidate scoring, hard-constraint filtering, safety screen, substitutions, low-time and low-energy modifiers, then final workout composition with explanation lines. That structure is documented and tested. It also includes conservative escalation behavior instead of vague warnings, which matters a lot in a recovery-aware app.</p>
+        <p>The hard part is that determinism moves effort from inference to curation. I had to carry explicit substitution rules, contraindication tags, and structured symptom fields. There is no shortcut where a model invents plausible advice. If content quality is weak, output quality is weak. That is both limitation and benefit.</p>
+        <h2>The engineering constraint hiding inside the product</h2>
+        <p>I learned that explainability is not just a nice product trait. It is an engineering constraint that affects data models, API contracts, and UX copy. Once I accepted that, the rest of the architecture made more sense. The rules engine became the center, not an add-on.</p>
+        <p>This choice also changed how I write tests. I do not test "smartness." I test expected behavior under defined conditions. That is less flashy, but it gives me a stable foundation to iterate from as the project grows.</p>
+
+        <blockquote>
+          Next move: expand safety test coverage from core red flags into more body-area-specific substitution edge cases.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./fitnesscoach-why-i-pivoted-to-a-capacitor-client.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./fitnesscoach-designing-the-api-and-schema-before-ui-polish.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This post focuses on the deterministic rules engine as the product core.</p>
+        <ul>
+          <li>Evidence anchor: docs/rule-engine.md and deterministic safety logic documented from 2026-03-12 onward</li>
+          <li>Emotional moment: the quiet confidence that comes from being able to defend every adjustment</li>
+          <li>Concrete win: a testable recommendation pipeline with explicit safety escalation and explanation lines</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

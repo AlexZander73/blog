@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitnessCoach: Safety UX Is Product UX | Builder Journal</title>
+  <meta name="description" content="Safety messaging is not a legal footer in this project; it is part of the core interaction model. I added red-flag handling and conservative pathways so the app can adapt without pretending to diagnose.">
+  <meta property="og:title" content="FitnessCoach: Safety UX Is Product UX">
+  <meta property="og:description" content="Safety messaging is not a legal footer in this project; it is part of the core interaction model. I added red-flag handling and conservative pathways so the app can adapt without pretending to diagnose.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/fitnesscoach-safety-ux-is-product-ux.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Design · Notes</p>
+        <h1>FitnessCoach: Safety UX Is Product UX</h1>
+        <p class="post-lead">Safety messaging is not a legal footer in this project; it is part of the core interaction model. I added red-flag handling and conservative pathways so the app can adapt without pretending to diagnose.</p>
+        <p class="post-meta"><span>March 24, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Design</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Treating safety as core interaction work</h2>
+        <p>I treat safety behavior as core product work, not compliance garnish. In this repository, that shows up in the rule-engine safety pipeline, red-flag check-in flow, and explicit conservative language. I felt the emotional weight of this area more than any other part, because careless wording in fitness and pain contexts can do real harm.</p>
+        <h2>Building conservative pathways on purpose</h2>
+        <p>The concrete change included updates to safety logic plus dedicated safety tests, and UI support for red-flag routing in the client. The system now models caution and stop-and-refer states, and avoids diagnostic claims by design. That made the language harder to write, but far more responsible.</p>
+        <p>The tradeoff is that conservative behavior can feel restrictive. There are moments where a user might want a harder recommendation and the system intentionally refuses. I accepted that constraint because trust matters more than short-term engagement spikes, especially in symptom-aware flows.</p>
+        <h2>If I cannot explain it, I should not ship it</h2>
+        <p>The lesson here was direct: if I cannot explain a safety decision clearly, I should not ship it. Deterministic outputs made this possible because every adjustment has a traceable rule path, not a black-box answer.</p>
+        <p>I also realized how much safety quality depends on content governance. Rules alone are not enough. Contraindication tags, substitution mappings, and educational copy all need review discipline to stay safe over time. That is why the admin and content workflow matter more than they seem.</p>
+
+        <blockquote>
+          Next move: expand clinician-reviewed tagging and formalize a review checklist for high-risk symptom pathways before release.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./fitnesscoach-making-sessions-fast-enough-to-use-mid-workout.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./fitnesscoach-personalization-without-guesswork.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>This entry covers safety messaging as a first-class part of the product, not an appendix.</p>
+        <ul>
+          <li>Evidence anchor: safety logic, red-flag pathways, and dedicated safety tests in the 2026-03-17 sprint layer</li>
+          <li>Emotional moment: feeling the weight of how careless wording could do real harm</li>
+          <li>Concrete win: explicit caution and stop-and-refer behavior backed by deterministic rule paths</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>
