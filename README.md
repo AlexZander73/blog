@@ -57,6 +57,13 @@ Two options:
 1. Recommended: set `isFeatured: true` on the post you want featured, and remove `isFeatured` from other posts.
 2. If no post is featured, the newest `date` is used automatically.
 
+## Scheduled posts
+
+Posts with a future `date` stay hidden from the homepage, archive, and tag previews until that date arrives in the `Australia/Brisbane` timezone.
+
+- Scheduled post pages are also blocked client-side if opened early.
+- This is a front-end scheduling layer only. If the repository is public, the raw HTML still exists in git history and the repo contents before the date. For a true embargo, keep unpublished posts off the public branch until release day.
+
 ## Archive behavior
 
 `archive.html` is rendered by `script.js` using `posts.js` data:

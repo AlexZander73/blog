@@ -1,4 +1,5 @@
 (function () {
+  const PUBLISH_TIME_ZONE = "Australia/Brisbane";
   const TAG_ORDER = [
     "AI",
     "Apps",
@@ -26,6 +27,29 @@
   function formatDate(dateString) {
     const parsed = parseDate(dateString);
     return Number.isNaN(parsed.getTime()) ? dateString : formatter.format(parsed);
+  }
+
+  function getTodayInPublishZone() {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: PUBLISH_TIME_ZONE,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date());
+
+    const mapped = {};
+    parts.forEach((part) => {
+      if (part.type !== "literal") {
+        mapped[part.type] = part.value;
+      }
+    });
+
+    return [mapped.year, mapped.month, mapped.day].join("-");
+  }
+
+  function getPublishedPosts(posts) {
+    const today = getTodayInPublishZone();
+    return posts.filter((post) => post.date <= today);
   }
 
   function getPostLink(post) {
@@ -149,21 +173,22 @@
     const recentSlot = document.getElementById("recent-posts");
     const tagPreview = document.getElementById("tag-preview");
 
-    const latest = getLatestPost(allPosts);
+    const publishedPosts = getPublishedPosts(allPosts);
+    const latest = getLatestPost(publishedPosts);
     if (latestSlot) {
       latestSlot.innerHTML = "";
       if (latest) {
         latestSlot.appendChild(createFeaturedCard(latest));
       } else {
-        latestSlot.innerHTML = '<p class="empty-state">No posts yet. Add one in <code>posts.js</code>.</p>';
+        latestSlot.innerHTML = '<p class="empty-state">No published posts yet. Add one in <code>posts.js</code> or wait for the next scheduled date.</p>';
       }
     }
 
     if (recentSlot) {
       recentSlot.innerHTML = "";
       const latestSlug = latest ? latest.slug : "";
-      const recent = allPosts.filter((post) => post.slug !== latestSlug).slice(0, 4);
-      const fallback = allPosts.slice(0, 4);
+      const recent = publishedPosts.filter((post) => post.slug !== latestSlug).slice(0, 4);
+      const fallback = publishedPosts.slice(0, 4);
       const items = recent.length > 0 ? recent : fallback;
       if (items.length === 0) {
         recentSlot.innerHTML = '<p class="empty-state">No recent posts yet.</p>';
@@ -176,7 +201,7 @@
 
     if (tagPreview) {
       tagPreview.innerHTML = "";
-      getUniqueTags(allPosts).forEach((tag) => tagPreview.appendChild(createTagElement(tag)));
+      getUniqueTags(publishedPosts).forEach((tag) => tagPreview.appendChild(createTagElement(tag)));
     }
   }
 
@@ -191,12 +216,13 @@
       return;
     }
 
+    const publishedPosts = getPublishedPosts(allPosts);
     let activeTag = "All";
     let query = "";
 
     function renderTagFilters() {
       tagsRow.innerHTML = "";
-      const tags = ["All"].concat(getUniqueTags(allPosts));
+      const tags = ["All"].concat(getUniqueTags(publishedPosts));
       tags.forEach((tag) => {
         const button = document.createElement("button");
         button.type = "button";
@@ -227,7 +253,7 @@
 
     function applyFilters() {
       const needle = query.trim().toLowerCase();
-      let filtered = allPosts.filter((post) => {
+      let filtered = publishedPosts.filter((post) => {
         if (activeTag !== "All" && !(post.tags || []).includes(activeTag)) {
           return false;
         }
@@ -249,10 +275,10 @@
         });
       }
 
-      if (filtered.length === allPosts.length) {
+      if (filtered.length === publishedPosts.length) {
         summary.textContent = "Showing all " + filtered.length + " posts.";
       } else {
-        summary.textContent = "Showing " + filtered.length + " of " + allPosts.length + " posts.";
+        summary.textContent = "Showing " + filtered.length + " of " + publishedPosts.length + " posts.";
       }
     }
 
@@ -265,6 +291,49 @@
 
     renderTagFilters();
     applyFilters();
+  }
+
+  function getCurrentPost() {
+    const pathname = window.location.pathname;
+    return allPosts.find((post) => {
+      const path = getPostLink(post);
+      return pathname.endsWith(path) || pathname.endsWith("/" + path);
+    }) || null;
+  }
+
+  function guardScheduledPost() {
+    const currentPost = getCurrentPost();
+    if (!currentPost) {
+      return;
+    }
+
+    if (currentPost.date <= getTodayInPublishZone()) {
+      return;
+    }
+
+    const main = document.querySelector("main");
+    if (!main) {
+      return;
+    }
+
+    const releaseDate = formatDate(currentPost.date);
+    main.innerHTML = [
+      '<section class="section">',
+      '  <div class="container">',
+      '    <div class="page-intro enter" style="--delay: 40ms;">',
+      '      <p class="eyebrow">Scheduled Post</p>',
+      '      <h1>This entry is not public yet.</h1>',
+      '      <p>This post is scheduled to appear on ' + releaseDate + " (" + PUBLISH_TIME_ZONE + ').</p>',
+      '      <p>It will automatically show up in the homepage and archive once that date arrives.</p>',
+      '      <div class="hero-actions">',
+      '        <a class="button button-primary" href="../archive.html">Back to Archive</a>',
+      '        <a class="button button-secondary" href="../index.html">Home</a>',
+      '      </div>',
+      '    </div>',
+      '  </div>',
+      '</section>'
+    ].join("");
+    document.title = "Scheduled Post | Builder Journal";
   }
 
   function setCurrentYear() {
@@ -280,6 +349,9 @@
     }
     if (page === "archive") {
       renderArchive();
+    }
+    if (page === "post") {
+      guardScheduledPost();
     }
     setCurrentYear();
   });
