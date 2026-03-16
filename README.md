@@ -9,6 +9,7 @@ Static, polished blog foundation for documenting projects, experiments, launches
 ├── index.html
 ├── archive.html
 ├── about.html
+├── subscribe.html
 ├── styles.css
 ├── script.js
 ├── posts.js
@@ -116,6 +117,12 @@ Optional secret:
   - newline-, comma-, or semicolon-separated private recipients
   - use this for real subscriber addresses you do not want stored in the public repo
 
+GitHub secret boundary:
+
+- Repository secrets live in GitHub Actions, not in the public Pages site.
+- A public repo does not expose secret values unless a workflow prints them, writes them into built files, or otherwise leaks them.
+- This blog uses the secret only inside the announcement workflow. The static site itself cannot read repository secrets.
+
 ### Local commands
 
 Preview the next email without sending:
@@ -131,6 +138,24 @@ python3 scripts/send_post_announcements.py --bootstrap-published
 ```
 
 Use `newsletter/private-subscribers.json` for local-only recipients if needed. That file is gitignored.
+
+## Subscribe page
+
+The site now includes `subscribe.html`.
+
+Current behavior:
+
+- Visitors can open a prefilled subscription request email to `index-hearty6c@icloud.com`
+- They can also copy a structured request if their email app does not open automatically
+- This works on GitHub Pages with no backend
+
+Why it is built this way:
+
+- A public static site cannot securely add new subscribers directly to a private mailing list by itself
+- The current subscribe flow keeps the site simple and keeps subscriber storage out of the public repo
+- Real subscribers should be added privately through the `EMAIL_SUBSCRIBERS` secret or a local gitignored file
+
+If you want true self-serve signup later, add an external form endpoint or a small backend and switch the subscribe flow to write there instead of opening email.
 
 ## Archive behavior
 

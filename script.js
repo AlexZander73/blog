@@ -336,6 +336,168 @@
     document.title = "Scheduled Post | Builder Journal";
   }
 
+  function getRootPrefix() {
+    return document.body.getAttribute("data-page") === "post" ? "../" : "./";
+  }
+
+  function injectSubscribeLinks() {
+    const subscribeHref = getRootPrefix() + "subscribe.html";
+
+    document.querySelectorAll(".site-nav").forEach((nav) => {
+      if (nav.querySelector('[data-subscribe-nav]')) {
+        return;
+      }
+      const link = document.createElement("a");
+      link.href = subscribeHref;
+      link.textContent = "Subscribe";
+      link.setAttribute("data-subscribe-nav", "true");
+      if (document.body.getAttribute("data-page") === "subscribe") {
+        link.setAttribute("aria-current", "page");
+      }
+      const mainSiteLink = nav.querySelector(".main-site-link");
+      if (mainSiteLink) {
+        nav.insertBefore(link, mainSiteLink);
+      } else {
+        nav.appendChild(link);
+      }
+    });
+
+    document.querySelectorAll(".footer-links").forEach((group) => {
+      const heading = group.querySelector("h3");
+      if (!heading || heading.textContent.trim() !== "Navigation") {
+        return;
+      }
+      if (group.querySelector('[data-subscribe-footer]')) {
+        return;
+      }
+      const link = document.createElement("a");
+      link.href = subscribeHref;
+      link.textContent = "Subscribe";
+      link.setAttribute("data-subscribe-footer", "true");
+      group.appendChild(link);
+    });
+  }
+
+  function buildSubscribeDraft(form) {
+    const formData = new FormData(form);
+    const email = (formData.get("email") || "").toString().trim();
+    const consent = formData.get("consent");
+    if (!email || !consent) {
+      return null;
+    }
+
+    const name = (formData.get("name") || "").toString().trim();
+    const interests = (formData.get("interests") || "").toString().trim();
+    const source = (formData.get("source") || "").toString().trim();
+    const siteName = form.getAttribute("data-site-name") || "Builder Journal";
+    const supportEmail = form.getAttribute("data-support-email") || "index-hearty6c@icloud.com";
+    const requestedAt = new Intl.DateTimeFormat("en-AU", {
+      dateStyle: "medium",
+      timeStyle: "short"
+    }).format(new Date());
+
+    const subject = siteName + " subscription request";
+    const lines = [
+      "Hello,",
+      "",
+      "Please add this address to the " + siteName + " email announcement list.",
+      "",
+      "Email: " + email
+    ];
+
+    if (name) {
+      lines.push("Name: " + name);
+    }
+    if (interests) {
+      lines.push("Interests: " + interests);
+    }
+    if (source) {
+      lines.push("Found the blog via: " + source);
+    }
+
+    lines.push("Requested from: " + window.location.href);
+    lines.push("Requested at: " + requestedAt);
+    lines.push("");
+    lines.push("Thanks.");
+
+    const body = lines.join("\n");
+    const preview = [
+      "To: " + supportEmail,
+      "Subject: " + subject,
+      "",
+      body
+    ].join("\n");
+
+    return {
+      subject: subject,
+      body: body,
+      preview: preview,
+      mailto: "mailto:" + encodeURIComponent(supportEmail) + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)
+    };
+  }
+
+  function initSubscribeForm() {
+    const form = document.querySelector("[data-subscribe-form]");
+    if (!form) {
+      return;
+    }
+
+    const status = document.getElementById("subscribe-status");
+    const draftWrap = document.getElementById("subscribe-draft-wrap");
+    const draftField = document.getElementById("subscribe-draft");
+    const copyButton = form.querySelector("[data-subscribe-copy]");
+
+    function setStatus(message, isSuccess) {
+      if (!status) {
+        return;
+      }
+      status.textContent = message;
+      status.classList.toggle("success", Boolean(isSuccess));
+    }
+
+    function prepareDraft() {
+      if (!form.reportValidity()) {
+        return null;
+      }
+      const draft = buildSubscribeDraft(form);
+      if (!draft) {
+        return null;
+      }
+      if (draftWrap) {
+        draftWrap.hidden = false;
+      }
+      if (draftField) {
+        draftField.value = draft.preview;
+      }
+      return draft;
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const draft = prepareDraft();
+      if (!draft) {
+        return;
+      }
+      setStatus("Your email app should open now. If it does not, copy the draft below and send it manually.", true);
+      window.location.href = draft.mailto;
+    });
+
+    if (copyButton) {
+      copyButton.addEventListener("click", async () => {
+        const draft = prepareDraft();
+        if (!draft) {
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(draft.preview);
+          setStatus("Signup request copied. Send it to the support inbox when ready.", true);
+        } catch (error) {
+          setStatus("Copy failed in this browser. Select the draft below and copy it manually.", false);
+        }
+      });
+    }
+  }
+
   function setCurrentYear() {
     document.querySelectorAll("[data-year]").forEach((node) => {
       node.textContent = new Date().getFullYear().toString();
@@ -344,6 +506,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const page = document.body.getAttribute("data-page");
+    injectSubscribeLinks();
     if (page === "home") {
       renderHome();
     }
@@ -352,6 +515,9 @@
     }
     if (page === "post") {
       guardScheduledPost();
+    }
+    if (page === "subscribe") {
+      initSubscribeForm();
     }
     setCurrentYear();
   });
