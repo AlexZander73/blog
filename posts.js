@@ -1,13 +1,67 @@
 window.BLOG_POSTS = [
   {
+    slug: "barbell-easy-calculator-persistence-saved-loads-reliability",
+    title: "Barbell Easy Calculator: Persistence, Saved Loads, and the Boring Work That Makes Apps Stick",
+    date: "2026-03-28",
+    excerpt: "The flashy part of this app is the barbell visualizer, but the sticky part is persistence. Users come back when their defaults, profiles, and saved loads are still there.",
+    tags: ["Systems", "Notes", "Apps"],
+    readingTime: "4 min read",
+    path: "posts/barbell-easy-calculator-persistence-saved-loads-reliability.html"
+  },
+  {
+    slug: "barbell-easy-calculator-visual-builder-at-a-glance",
+    title: "Barbell Easy Calculator: Designing the Visual Builder for At-a-Glance Use",
+    date: "2026-03-26",
+    excerpt: "I built the visual builder because some users think in stacks, not equations. The best interaction pattern turned out to be direct manipulation: add from palette, remove from the barbell.",
+    tags: ["Design", "Apps", "Build Logs"],
+    readingTime: "5 min read",
+    path: "posts/barbell-easy-calculator-visual-builder-at-a-glance.html",
+    isFeatured: true
+  },
+  {
+    slug: "barbell-easy-calculator-impossible-targets-user-trust",
+    title: "Barbell Easy Calculator: Handling Impossible Targets Without Breaking User Trust",
+    date: "2026-03-24",
+    excerpt: "One of the hardest product moments is telling a user their exact target cannot be built right now. I learned that trust comes from clear fallbacks, not forced precision.",
+    tags: ["Notes", "Systems", "Build Logs"],
+    readingTime: "4 min read",
+    path: "posts/barbell-easy-calculator-impossible-targets-user-trust.html"
+  },
+  {
+    slug: "barbell-easy-calculator-deterministic-plate-solver-trust",
+    title: "Barbell Easy Calculator: Building a Deterministic Plate Solver I Can Trust",
+    date: "2026-03-22",
+    excerpt: "The heart of this project is not the UI, it is deterministic math under real gym constraints. I built the solver so the same input always produces the same output, even when exact targets fail.",
+    tags: ["Systems", "Build Logs", "Tools"],
+    readingTime: "5 min read",
+    path: "posts/barbell-easy-calculator-deterministic-plate-solver-trust.html"
+  },
+  {
+    slug: "barbell-easy-calculator-why-react-capacitor-gym-utility",
+    title: "Barbell Easy Calculator: Why I Chose React + Capacitor for a Gym Utility",
+    date: "2026-03-20",
+    excerpt: "I chose React + Capacitor because I needed fast iteration and mobile delivery from one codebase. The decision was practical, not ideological, and it came with tradeoffs I accepted up front.",
+    tags: ["Systems", "Apps", "Tools"],
+    readingTime: "4 min read",
+    path: "posts/barbell-easy-calculator-why-react-capacitor-gym-utility.html"
+  },
+  {
+    slug: "barbell-easy-calculator-one-commit-full-mvp-cost-of-speed",
+    title: "Barbell Easy Calculator: One Commit, Full MVP, and the Cost of Speed",
+    date: "2026-03-18",
+    excerpt: "I shipped the first complete version of Barbell Easy Calculator in a single baseline commit on 2026-03-12. It was fast, effective, and emotionally messy in ways I did not expect.",
+    tags: ["Build Logs", "Apps", "Notes"],
+    readingTime: "4 min read",
+    path: "posts/barbell-easy-calculator-one-commit-full-mvp-cost-of-speed.html"
+  },
+  {
     slug: "carpentry-companion-release-readiness-checkpoint",
     title: "Release Readiness Checkpoint: Where Carpentry Companion Stands Today",
     date: "2026-03-10",
     excerpt: "As of 2026-03-10, the app is still pre-launch, but the release spine is finally real: privacy policy in place, tests green, native build prep passing, and clear blockers tracked.",
     tags: ["Launches", "Build Logs", "Apps"],
     readingTime: "5 min read",
-    path: "posts/carpentry-companion-release-readiness-checkpoint.html",
-    isFeatured: true
+    path: "posts/carpentry-companion-release-readiness-checkpoint.html"
   },
   {
     slug: "carpentry-companion-native-first-pivot-note",

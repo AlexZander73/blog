@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbell Easy Calculator: One Commit, Full MVP, and the Cost of Speed | Builder Journal</title>
+  <meta name="description" content="I shipped the first complete version of Barbell Easy Calculator in a single baseline commit on 2026-03-12. It was fast, effective, and emotionally messy in ways I did not expect.">
+  <meta property="og:title" content="Barbell Easy Calculator: One Commit, Full MVP, and the Cost of Speed">
+  <meta property="og:description" content="I shipped the first complete version of Barbell Easy Calculator in a single baseline commit on 2026-03-12. It was fast, effective, and emotionally messy in ways I did not expect.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/barbell-easy-calculator-one-commit-full-mvp-cost-of-speed.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Build Logs · Apps · Notes</p>
+        <h1>Barbell Easy Calculator: One Commit, Full MVP, and the Cost of Speed</h1>
+        <p class="post-lead">I shipped the first complete version of Barbell Easy Calculator in a single baseline commit on 2026-03-12. It was fast, effective, and emotionally messy in ways I did not expect.</p>
+        <p class="post-meta"><span>March 18, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Build Logs</span>
+          <span class="tag">Apps</span>
+          <span class="tag">Notes</span>
+        </div>
+
+        <h2>Shipping fast worked</h2>
+        <p>I made a deliberate bet: ship a complete MVP fast, then tighten it. On 2026-03-12, that bet became one giant baseline commit that included solver logic, UI screens, persistence, tests, and native iOS scaffolding. I felt two opposite things at once. Relief, because the app was finally real and runnable. Anxiety, because one commit can hide the story of why each part exists.</p>
+        <p>The concrete change was broad and undeniable. I put in the model layer, calculation engine, visualizer, builder flow, settings, saved loads, and test coverage in one pass. The app moved from idea to usable utility in a single jump. I could run tests, build assets, sync Capacitor, and open iOS. That was the practical win I needed.</p>
+
+        <h2>The tradeoff showed up right away</h2>
+        <p>The cost showed up immediately in maintainability. A one-commit launch is hard to review and harder to explain to future me. If I need to revisit a tradeoff, I do not get a clean sequence of commit breadcrumbs. I have to reconstruct intent from files and tests. That is not catastrophic, but it is friction.</p>
+        <p>That tension is emotional as much as technical. Big bursts feel great in the moment because something exists. Then the dust settles and you realize the history is harder to trust than the product itself.</p>
+
+        <h2>What I learned</h2>
+        <p>What I learned is simple: speed is fine, but narrative debt is real technical debt. When the product logic is sensitive, like plate loading and safety-related recommendations, I need history that is easy to audit. Clear commit slices are not vanity; they are traceability.</p>
+        <p>I still do not regret moving quickly. The project crossed the line from concept to tool, and that matters. But I am treating this as the last all-at-once milestone. The next phase should be smaller, evidence-backed changes with cleaner diffs and tighter intent per commit.</p>
+
+        <blockquote>
+          Next move: break upcoming updates into focused commit slices for solver, visual UX, and persistence so product decisions stay easy to trace.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./carpentry-companion-release-readiness-checkpoint.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./barbell-easy-calculator-why-react-capacitor-gym-utility.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>Barbell Easy Calculator timeline entry from the first shipping phase.</p>
+        <ul>
+          <li>Evidence anchor: baseline commit `9462e41` on 2026-03-12</li>
+          <li>Emotional moment: relief mixed with anxiety about narrative debt</li>
+          <li>Concrete win: full MVP shipped with tests, solver, UI, and native shell</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

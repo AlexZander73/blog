@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbell Easy Calculator: Persistence, Saved Loads, and the Boring Work That Makes Apps Stick | Builder Journal</title>
+  <meta name="description" content="The flashy part of this app is the barbell visualizer, but the sticky part is persistence. Users come back when their defaults, profiles, and saved loads are still there.">
+  <meta property="og:title" content="Barbell Easy Calculator: Persistence, Saved Loads, and the Boring Work That Makes Apps Stick">
+  <meta property="og:description" content="The flashy part of this app is the barbell visualizer, but the sticky part is persistence. Users come back when their defaults, profiles, and saved loads are still there.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/barbell-easy-calculator-persistence-saved-loads-reliability.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Systems · Notes · Apps</p>
+        <h1>Barbell Easy Calculator: Persistence, Saved Loads, and the Boring Work That Makes Apps Stick</h1>
+        <p class="post-lead">The flashy part of this app is the barbell visualizer, but the sticky part is persistence. Users come back when their defaults, profiles, and saved loads are still there.</p>
+        <p class="post-meta"><span>March 28, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Systems</span>
+          <span class="tag">Notes</span>
+          <span class="tag">Apps</span>
+        </div>
+
+        <h2>The part users quietly depend on</h2>
+        <p>I love building interaction-heavy features, but this project reminded me that durability is what turns a tool into a habit. The emotional moment was subtle but real: seeing saved state survive reloads made the app feel trustworthy in a way visual polish never can by itself.</p>
+        <p>The concrete change was adding a local persistence layer with service and repository boundaries, then wiring it into settings, gym profiles, and saved load workflows. Instead of a temporary demo state, the app keeps defaults, favorite quick loads, recents, and profile adjustments. That means a lifter does not have to reconfigure everything before each session. For a gym utility, that is a major quality-of-life win.</p>
+
+        <h2>Boring work is product work</h2>
+        <p>I paired that with tests around key workflows. Solver tests cover correctness and constraints, while screen tests exercise practical behavior like barbell add-remove and saved-load interactions. I also keep build and test checks as regular gates, so regressions are less likely to slip through while iterating on UX.</p>
+        <p>This part of the product will never look dramatic in screenshots. It still matters more than most decorative polish.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson here is boring on paper but critical in practice: reliability is user experience. A tool that forgets state feels careless. A tool that remembers context feels respectful. That respect is what gets repeat usage.</p>
+        <p>There are still gaps. I do not yet have telemetry or real usage metrics in this repository, so I cannot quantify retention impact from persistence. But the product direction is clear. If I keep reducing friction between sessions, this app becomes more useful every time someone opens it.</p>
+
+        <blockquote>
+          Next move: add profile import and export so users can keep their gym setup portable without introducing a backend.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./barbell-easy-calculator-visual-builder-at-a-glance.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="../archive.html">Back to Archive -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>Barbell Easy Calculator systems note on state, profiles, and repeat use.</p>
+        <ul>
+          <li>Evidence anchor: `storageService.ts` plus repository layer and saved-load flows</li>
+          <li>Emotional moment: seeing state survive and finally feel dependable</li>
+          <li>Concrete win: offline-first persistence for defaults, profiles, recents, and saved loads</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>

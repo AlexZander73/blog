@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbell Easy Calculator: Handling Impossible Targets Without Breaking User Trust | Builder Journal</title>
+  <meta name="description" content="One of the hardest product moments is telling a user their exact target cannot be built right now. I learned that trust comes from clear fallbacks, not forced precision.">
+  <meta property="og:title" content="Barbell Easy Calculator: Handling Impossible Targets Without Breaking User Trust">
+  <meta property="og:description" content="One of the hardest product moments is telling a user their exact target cannot be built right now. I learned that trust comes from clear fallbacks, not forced precision.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexzander73.github.io/blog/posts/barbell-easy-calculator-impossible-targets-user-trust.html">
+  <meta property="og:image" content="../assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../posts.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body data-page="post">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span>Builder Journal</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+        <a class="main-site-link" href="https://alexzander73.github.io">Back to Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container post-layout">
+      <article class="post-article enter" style="--delay: 70ms;">
+        <p class="eyebrow">Notes · Systems · Build Logs</p>
+        <h1>Barbell Easy Calculator: Handling Impossible Targets Without Breaking User Trust</h1>
+        <p class="post-lead">One of the hardest product moments is telling a user their exact target cannot be built right now. I learned that trust comes from clear fallbacks, not forced precision.</p>
+        <p class="post-meta"><span>March 24, 2026</span><span>4 min read</span></p>
+        <div class="tag-list">
+          <span class="tag">Notes</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Build Logs</span>
+        </div>
+
+        <h2>The uncomfortable truth screen</h2>
+        <p>A lot of app builders avoid uncomfortable output states. I did the opposite here because gym reality demands it. Sometimes exact targets are impossible due to disabled increments or plate inventory. The emotional moment for me was accepting that no exact solution is not a failure screen. It is a truth screen, and I need to present it cleanly.</p>
+        <p>The concrete change was implementing nearest lower and higher outcomes plus explicit explanation strings when exact loads are unavailable. I also added inventory-aware behavior so recommendations never exceed what a profile says is physically available. In tests, that means cases like a home setup with limited plates now return feasible results instead of fantasy loads.</p>
+
+        <h2>Strict and useful at the same time</h2>
+        <p>I had to balance strictness and usefulness. If I only showed cannot solve, the app would be technically correct but practically weak. If I forced an exact-looking answer anyway, I would be misleading users. The compromise was straightforward: keep symmetric safety constraints, show nearest options, and explain why exact is missing.</p>
+        <p>That explanation matters more than it looks. It preserves trust in the math instead of making the user second-guess the whole app.</p>
+
+        <h2>What I learned</h2>
+        <p>The lesson is that product honesty is a feature. In the gym, users make quick decisions under load. Clear constraints and realistic alternatives are more valuable than polished but misleading output. Every not exact response should still move someone forward safely and with confidence.</p>
+        <p>I think this is one of the strongest parts of the app’s foundation. It respects the user’s actual environment instead of pretending every gym has perfect inventory.</p>
+
+        <blockquote>
+          Next move: improve in-app copy around exact-unavailable states so users can immediately see what change would unlock a precise result.
+        </blockquote>
+
+        <div class="post-nav">
+          <a class="text-link" href="./barbell-easy-calculator-deterministic-plate-solver-trust.html">&lt;- Previous Entry</a>
+          <a class="text-link" href="./barbell-easy-calculator-visual-builder-at-a-glance.html">Next Entry -&gt;</a>
+        </div>
+      </article>
+
+      <aside class="post-aside enter" style="--delay: 140ms;">
+        <h2>Post Snapshot</h2>
+        <p>Barbell Easy Calculator note on trust under constrained inputs.</p>
+        <ul>
+          <li>Evidence anchor: nearest-result tests and solver messaging in `plateSolver.ts`</li>
+          <li>Emotional moment: accepting that exact-unavailable is a valid product state</li>
+          <li>Concrete win: clear fallback results instead of misleading precision</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          <span>Builder Journal</span>
+        </a>
+        <p class="footer-copy">A practical timeline of building with honesty, taste, and momentum.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-links">
+        <h3>Connect</h3>
+        <a href="https://alexzander73.github.io">Main Website</a>
+        <a href="https://github.com/AlexZander73">GitHub</a>
+        <a href="mailto:index-hearty6c@icloud.com">Email</a>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year></span> Builder Journal.</p>
+  </footer>
+</body>
+</html>
