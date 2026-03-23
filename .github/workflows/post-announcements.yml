@@ -2,6 +2,16 @@ name: Post Announcements
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Run mode for this manual execution
+        required: true
+        default: send
+        type: choice
+        options:
+          - send
+          - status
+          - bootstrap
   push:
     branches:
       - main
@@ -47,8 +57,24 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Send post announcement email
-        run: python3 scripts/send_post_announcements.py
+      - name: Run announcement command
+        run: |
+          MODE="send"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE="${{ github.event.inputs.mode }}"
+          fi
+
+          case "$MODE" in
+            status)
+              python3 scripts/send_post_announcements.py --status
+              ;;
+            bootstrap)
+              python3 scripts/send_post_announcements.py --bootstrap-published
+              ;;
+            send|*)
+              python3 scripts/send_post_announcements.py --fail-if-smtp-missing
+              ;;
+          esac
 
       - name: Commit announcement state
         run: |

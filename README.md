@@ -81,7 +81,7 @@ How it works:
 
 - `.github/workflows/post-announcements.yml` runs on:
   - pushes that change posts or the newsletter scripts
-  - manual `workflow_dispatch`
+  - manual `workflow_dispatch` with modes: `status`, `send`, `bootstrap`
   - an hourly schedule
 - `scripts/send_post_announcements.py` reads `posts.js`, checks which posts are published in the `Australia/Brisbane` timezone, and emails only slugs that have not already been announced.
 - `newsletter/announced-posts.json` is the send-state file. The workflow commits updates to this file after a successful send so scheduled posts only go out once.
@@ -125,10 +125,22 @@ GitHub secret boundary:
 
 ### Local commands
 
+Show queue status (how many unsent and which slugs are waiting):
+
+```bash
+python3 scripts/send_post_announcements.py --status
+```
+
 Preview the next email without sending:
 
 ```bash
 python3 scripts/send_post_announcements.py --dry-run
+```
+
+Send all currently queued unsent posts now:
+
+```bash
+python3 scripts/send_post_announcements.py --fail-if-smtp-missing
 ```
 
 Re-bootstrap current published posts as already announced:
@@ -138,6 +150,14 @@ python3 scripts/send_post_announcements.py --bootstrap-published
 ```
 
 Use `newsletter/private-subscribers.json` for local-only recipients if needed. That file is gitignored.
+
+### Manual queue control in GitHub Actions
+
+Open `Actions` -> `Post Announcements` -> `Run workflow`, then pick:
+
+- `status`: inspect the queue only
+- `send`: send all unsent published posts now
+- `bootstrap`: mark currently published posts as already announced
 
 ## Subscribe page
 

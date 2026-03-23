@@ -139,6 +139,10 @@ def get_unsent_posts(posts: list[dict], state: dict) -> list[dict]:
     return [post for post in posts if post.get("slug") not in announced]
 
 
+def sort_posts(posts: list[dict]) -> list[dict]:
+    return sorted(posts, key=lambda post: (post.get("date", ""), post.get("title", "")))
+
+
 def infer_default_host(username: str) -> str:
     domain = username.split("@")[-1].lower() if "@" in username else ""
     if domain in {"icloud.com", "me.com", "mac.com"}:
@@ -234,6 +238,26 @@ def build_html(site_name: str, base_url: str, new_posts: list[dict]) -> str:
     )
 
 
+def print_queue_status(
+    timezone_name: str,
+    published_posts: list[dict],
+    unsent_posts: list[dict],
+    recipients: list[str],
+) -> None:
+    today = current_date(timezone_name)
+    print(f"Queue status ({timezone_name})")
+    print(f"- Today: {today}")
+    print(f"- Published posts: {len(published_posts)}")
+    print(f"- Unsent posts: {len(unsent_posts)}")
+    print(f"- Active recipients: {len(recipients)}")
+    if not unsent_posts:
+        print("- Unsent slugs: none")
+        return
+    print("- Unsent slugs:")
+    for post in sort_posts(unsent_posts):
+        print(f"  - {post.get('date', 'unknown')} | {post.get('slug', '')}")
+
+
 def send_email(config: SmtpConfig, recipients: list[str], subject: str, text_body: str, html_body: str) -> None:
     message = EmailMessage()
     message["Subject"] = subject
@@ -276,15 +300,22 @@ def bootstrap_current_posts(state: dict, posts: list[dict], timezone_name: str) 
     return added
 
 
-def announce_new_posts(dry_run: bool, timezone_name: str, site_name: str, base_url: str) -> int:
+def announce_new_posts(
+    dry_run: bool,
+    timezone_name: str,
+    site_name: str,
+    base_url: str,
+    fail_if_smtp_missing: bool = False,
+) -> int:
     posts = get_published_posts(load_posts(), timezone_name)
     state = load_state(timezone_name)
     new_posts = get_unsent_posts(posts, state)
+    recipients = load_subscribers()
+    print_queue_status(timezone_name, posts, new_posts, recipients)
     if not new_posts:
         print("No newly published posts to announce.")
         return 0
 
-    recipients = load_subscribers()
     if not recipients:
         print("Skipping send: no subscribers configured.")
         return 0
@@ -302,7 +333,7 @@ def announce_new_posts(dry_run: bool, timezone_name: str, site_name: str, base_u
     config = get_smtp_config()
     if not config.ready:
         print("Skipping send: SMTP config is incomplete. Set SMTP_PASSWORD to activate announcements.")
-        return 0
+        return 1 if fail_if_smtp_missing else 0
 
     send_email(config, recipients, subject, text_body, html_body)
     timestamp = current_timestamp(timezone_name)
@@ -321,6 +352,12 @@ def announce_new_posts(dry_run: bool, timezone_name: str, site_name: str, base_u
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Send Builder Journal post announcement emails.")
     parser.add_argument("--dry-run", action="store_true", help="Render the next email without sending it.")
+    parser.add_argument("--status", action="store_true", help="Show queue status and unsent post slugs.")
+    parser.add_argument(
+        "--fail-if-smtp-missing",
+        action="store_true",
+        help="Exit non-zero if there are unsent posts but SMTP config is missing.",
+    )
     parser.add_argument(
         "--bootstrap-published",
         action="store_true",
@@ -340,12 +377,25 @@ def main() -> int:
     published_posts = get_published_posts(load_posts(), timezone_name)
     state = load_state(timezone_name)
 
+    subscribers = load_subscribers()
+    unsent_posts = get_unsent_posts(published_posts, state)
+
+    if args.status:
+        print_queue_status(timezone_name, published_posts, unsent_posts, subscribers)
+        return 0
+
     if args.bootstrap_published:
         added = bootstrap_current_posts(state, published_posts, timezone_name)
         print(f"Bootstrapped {added} published post(s) into newsletter state.")
         return 0
 
-    return announce_new_posts(args.dry_run, timezone_name, site_name, base_url)
+    return announce_new_posts(
+        args.dry_run,
+        timezone_name,
+        site_name,
+        base_url,
+        fail_if_smtp_missing=args.fail_if_smtp_missing,
+    )
 
 
 if __name__ == "__main__":
